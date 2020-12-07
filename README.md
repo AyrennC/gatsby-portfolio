@@ -1,6 +1,6 @@
 # Gatsby Portfolio
 
-**This is very much still in progress, literally nothing**
+**This is very much still in progress, currently a website with nothing.**
 
 A personal website for demonstrating my projects and experiences
 
