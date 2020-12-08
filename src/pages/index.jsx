@@ -1,31 +1,39 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-
-// styles
-const pageStyles = {
-  color: '#2d3436',
-  padding: '96px',
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-const headingAccentStyles = {
-  color: '#fdcb6e',
-};
+import { Layout } from '../components';
+import resume from '../data/Carney__Resume.pdf';
+import { Container, jsx } from 'theme-ui';
 
 // markup
 const IndexPage = () => (
-  <main style={pageStyles}>
-    <h1 style={headingStyles}>
-      Hi, I am Carney
-      <br />
-      <span style={headingAccentStyles}>
-        — this website is under construction.
-      </span>
-    </h1>
-  </main>
+  <Layout>
+    <main>
+      <Container p={4}>
+        <h1
+          sx={{
+            color: 'primary',
+            fontFamily: 'heading',
+          }}
+        >
+          Hi, I am Carney!
+        </h1>
+        <span
+          sx={{
+            color: 'secondary',
+            fontFamily: 'body',
+          }}
+        >
+          - a software engineer trying to make my way in this universe.
+          <br />
+          this website is under construction, but don&apos;t let that stop you
+          from taking a look at my{' '}
+          <a sx={{ color: 'primary' }} href={resume}>
+            resume
+          </a>
+          .
+        </span>
+      </Container>
+    </main>
+  </Layout>
 );
 
 export default IndexPage;

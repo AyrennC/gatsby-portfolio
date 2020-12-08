@@ -6,6 +6,7 @@
   },
   "rules": {
     "prettier/prettier": ["error"],
+    "react/jsx-one-expression-per-line": "off",
     "import/no-dynamic-require": "error",
     "import/no-cycle": "error",
     "import/no-self-import": "error",
