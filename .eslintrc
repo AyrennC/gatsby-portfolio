@@ -1,0 +1,30 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier", "import"],
+  "globals": {
+    "__PATH_PREFIX__": true
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "import/no-dynamic-require": "error",
+    "import/no-cycle": "error",
+    "import/no-self-import": "error",
+    "import/no-useless-path-segments": "error",
+    "import/export": "error",
+    "import/no-named-as-default": "error",
+    "import/no-named-as-default-member": "error",
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "never",
+        "groups": ["index", "sibling", "parent", "external", "builtin"]
+      }
+    ]
+  }
+}

@@ -28,7 +28,7 @@ A personal website for demonstrating my projects and experiences
 
     Your site is now running at http://localhost:8000!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    Edit `src/pages/index.jsx` to see your site update in real-time!
 
 4.  **Learn more**
 

@@ -2,7 +2,7 @@
   "name": "gatsby-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "My Gatsby site",
+  "description": "My personal website",
   "author": "CarneyC",
   "keywords": [
     "gatsby"
@@ -15,6 +15,16 @@
     "clean": "gatsby clean"
   },
   "license": "0BSD",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -32,5 +42,17 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "theme-ui": "^0.3.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "husky": "^4.3.5",
+    "lint-staged": "^10.5.3"
   }
 }
