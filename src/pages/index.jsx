@@ -22,7 +22,7 @@ const IndexPage = () => (
             fontFamily: 'body',
           }}
         >
-          - a software engineer trying to make my way in this universe.
+          - just a simple man trying to make my way as a software engineer.
           <br />
           this website is under construction, but don&apos;t let that stop you
           from taking a look at my{' '}

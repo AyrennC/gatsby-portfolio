@@ -3,7 +3,7 @@ module.exports = {
   title: 'Carney Cheng', // Navigation and Site Title
   titleAlt: 'Carney Cheng Portfolio', // Title for JSONLD
   description:
-    "Hi, I'm Carney Cheng. A software engineer trying to make my way in the universe.",
+    "Hi, I'm Carney Cheng. A software engineer trying to make my way in the industry",
   headline: 'Carney Cheng Personal Portfolio', // Headline for schema.org JSONLD
   url: 'https://carneyc.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
