@@ -1,7 +1,7 @@
 export default {
   fonts: {
     body: "'VT323', monospace",
-    heading: "'Share Tech Mono', 'VT323', monospace",
+    heading: "'VT323', monospace",
     monospace: "'VT323', monospace",
   },
   fontWeights: {
@@ -11,7 +11,7 @@ export default {
   },
   colors: {
     text: '#5bf870',
-    background: '#ffffff',
+    background: '#523c27',
     primary: '#5bf870',
     secondary: '#05321e',
     muted: '#050505',
