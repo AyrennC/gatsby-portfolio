@@ -4,8 +4,12 @@
   "globals": {
     "__PATH_PREFIX__": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
   "rules": {
     "prettier/prettier": ["error"],
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
     "import/no-dynamic-require": "error",
     "import/no-cycle": "error",

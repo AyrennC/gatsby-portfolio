@@ -23,7 +23,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-graphql-config`,
     'gatsby-plugin-theme-ui',
-    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -45,8 +44,6 @@ module.exports = {
         icon: website.favicon,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-mdx',
     {
       resolve: 'gatsby-source-filesystem',

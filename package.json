@@ -26,10 +26,13 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.1.2",
+    "@emotion/styled": "^11.0.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@theme-ui/preset-swiss": "^0.3.4",
     "fontsource-neuton": "^3.0.9",
+    "fontsource-share-tech-mono": "^3.0.9",
+    "fontsource-vt323": "^3.0.9",
     "fontsource-work-sans": "^3.0.3",
     "gatsby": "^2.26.1",
     "gatsby-plugin-google-analytics": "^2.7.0",
@@ -48,7 +51,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "theme-ui": "^0.3.4"
+    "theme-ui": "^0.3.4",
+    "typeit-react": "^0.1.3"
   },
   "devDependencies": {
     "@types/theme-ui": "^0.3.7",
