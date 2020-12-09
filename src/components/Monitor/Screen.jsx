@@ -140,6 +140,9 @@ const StyledScreen = styled.div`
   width: 100%;
   height: 100%;
 
+  border-radius: 20px;
+  padding: 16px;
+
   background: ${(props) => props.theme.colors.secondary};
   background-image: ${(props) =>
     `radial-gradient(ellipse, ${props.theme.colors.secondary} 0%, ${props.theme.colors.muted} 90%)`};
@@ -149,6 +152,7 @@ const StyledScreen = styled.div`
     content: ' ';
     display: block;
     position: absolute;
+    border-radius: 20px;
     top: 0;
     left: 0;
     bottom: 0;
@@ -164,6 +168,7 @@ const StyledScreen = styled.div`
     content: ' ';
     display: block;
     position: absolute;
+    border-radius: 20px;
     top: 0;
     left: 0;
     bottom: 0;
