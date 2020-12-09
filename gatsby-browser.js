@@ -6,3 +6,7 @@ import 'fontsource-neuton/700.css';
 
 import 'fontsource-vt323';
 import 'fontsource-share-tech-mono';
+
+import 'fontsource-museomoderno/900.css';
+
+import 'fontsource-vibur';

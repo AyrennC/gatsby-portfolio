@@ -6,18 +6,12 @@ import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
 
 const Monitor = ({ children }) => (
-  <div
-    sx={{
-      padding: 4,
-    }}
-  >
-    <Macintosh>
-      <Screen>
-        <Scanline />
-        {children}
-      </Screen>
-    </Macintosh>
-  </div>
+  <Macintosh>
+    <Screen>
+      <Scanline />
+      {children}
+    </Screen>
+  </Macintosh>
 );
 
 export default Monitor;

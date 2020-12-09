@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import Socials from './Socials';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
@@ -10,7 +11,6 @@ const MacintoshContainer = styled.div`
   margin: 125px auto;
   position: relative;
   box-shadow: 0 80px 60px -60px rgba(0, 0, 0, 0.4);
-  transform: scale(1.5);
 `;
 
 const Monitor = styled.div`
@@ -21,7 +21,7 @@ const Monitor = styled.div`
   border-radius: 15px;
   background-color: #dddbc2;
   position: absolute;
-  background-image: lineear-gradient(#dddbc2, #dfdac4);
+  background-image: linear-gradient(#dddbc2, #dfdac4);
   background-image: ${({ widthOffset }) => `conic-gradient(
     #dddbc2 0 ${10.5 + widthOffset}%,
     #ececd5 ${11 + widthOffset}% ${11.5 + widthOffset}%,
@@ -83,19 +83,14 @@ const Screen = styled.div`
 
 const Logo = styled.div`
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 80px;
+  height: 36px;
   background-image: radial-gradient(#c9c6b5, #cbc9ba);
   border-radius: 2px;
   position: absolute;
   left: 22px;
-  bottom: 22px;
+  bottom: 18px;
   box-shadow: 0 0 2px 0px #979181 inset;
-
-  p {
-    text-align: center;
-    margin-top: -0.5px;
-  }
 `;
 
 const Opening = styled.div`
@@ -200,7 +195,7 @@ const Macintosh = ({ width, height, widthOffset, heightOffset, children }) => (
           <Screen height={height}>{children}</Screen>
         </ScreenCutout>
         <Logo>
-          <p>🍭️‍</p>
+          <Socials />
         </Logo>
         <Opening>
           <OpeningInner />
@@ -227,7 +222,7 @@ Macintosh.propTypes = {
 };
 
 Macintosh.defaultProps = {
-  width: 560,
+  width: 500,
   height: 270,
   widthOffset: 4,
   heightOffset: 2,

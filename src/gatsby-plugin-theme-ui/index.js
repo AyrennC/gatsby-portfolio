@@ -15,6 +15,7 @@ export default {
     primary: '#5bf870',
     secondary: '#05321e',
     muted: '#050505',
+    accent: '#5cfdff',
   },
   styles: {
     root: {
