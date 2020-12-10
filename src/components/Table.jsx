@@ -1,6 +1,10 @@
 /** @jsx jsx */
+import Monitor from './Monitor';
+import useWindowSize from '../hooks/useWindowSize';
+import GrassTile from '../images/grass-tile.png';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import { useMemo } from 'react';
 import { jsx } from 'theme-ui';
 
 const On = styled.div`
@@ -19,10 +23,11 @@ const TableContainer = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
-  background: #deb778;
+  background: #8bc34a url(${GrassTile});
+  background-size: contain;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  box-shadow: inset 0 -16px 0 0 rgba(114, 72, 34, 0.4);
+  box-shadow: inset 0 -16px 0 0 #396343;
 `;
 
 const Notepad = styled.div`
@@ -58,9 +63,18 @@ const Notepad = styled.div`
   bottom: 43px;
   left: 76px;
   overflow: hidden;
+
+  @media (orientation: portrait) {
+    position: absolute;
+    bottom: 80px;
+    left: auto;
+    right: 0;
+    transform: scale(1.2) rotate(20deg);
+  }
 `;
 
 const Cup = styled.div`
+  z-index: 10;
   height: 155px;
   width: 131px;
   position: absolute;
@@ -71,6 +85,17 @@ const Cup = styled.div`
   border-top-right-radius: 50% 34%;
   border-bottom-left-radius: 45% 67%;
   border-bottom-right-radius: 45% 67%;
+
+  @media (orientation: portrait) {
+    bottom: 74px;
+    left: 40px;
+  }
+
+  @media (max-aspect-ratio: 7 / 8) {
+    transform: scale(1.2);
+    bottom: 94px;
+    left: 100px;
+  }
 `;
 
 const CupShadow = styled.div`
@@ -82,6 +107,17 @@ const CupShadow = styled.div`
   position: absolute;
   bottom: 265px;
   left: 52px;
+
+  @media (orientation: portrait) {
+    transform: scale(1.2);
+    bottom: 70px;
+    left: 32px;
+  }
+
+  @media (max-aspect-ratio: 7 / 8) {
+    bottom: 90px;
+    left: 92px;
+  }
 `;
 
 const Top = styled.div`
@@ -89,8 +125,6 @@ const Top = styled.div`
   width: 131px;
   background: #8f6739;
   border-radius: 50%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 12px solid #46a8eb;
   box-shadow: inset 0 50px 0 -20px #6b4b28;
@@ -101,8 +135,6 @@ const Handle = styled.div`
   height: 66px;
   width: 60px;
   background: transparent;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 16px solid #1d80c2;
   border-top-left-radius: 50%;
@@ -120,7 +152,6 @@ const Teatag = styled.div`
   top: 103px;
   left: -20px;
   background: #c1ebc3;
-  -webkit-box-shadow: inset 0 -6px 0 0 #45ac71;
   box-shadow: inset 0 -6px 0 0 #45ac71;
 
   &::before {
@@ -141,8 +172,6 @@ const TeabagCord = styled.div`
   position: absolute;
   top: 57px;
   left: -7px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 6px solid #fff5e6;
   border-top-left-radius: 29px;
@@ -178,22 +207,67 @@ const TeabagCordBeginningAndEnd = styled.div`
   }
 `;
 
-const Table = ({ children }) => (
-  <TableContainer>
-    <On>
-      <Notepad />
-      <div>{children}</div>
-      <CupShadow />
-      <Cup>
-        <Teatag />
-        <Handle />
-        <Top />
-        <TeabagCord />
-        <TeabagCordBeginningAndEnd />
-      </Cup>
-    </On>
-  </TableContainer>
-);
+const ComputerContainer = styled.div`
+  position: absolute;
+  bottom: 120px;
+
+  @media (orientation: portrait) {
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+`;
+
+const Computer = styled.div`
+  transform-origin: 50% 100%;
+
+  @media (min-width: 780px) {
+    @media (max-aspect-ratio: 7 / 8) {
+      transform: scale(1.5);
+    }
+
+    @media (max-aspect-ratio: 2 / 3) {
+      transform: scale(2);
+    }
+  }
+`;
+
+const Table = ({ children }) => {
+  const { width, height } = useWindowSize();
+  const dimension = useMemo(() => {
+    if (width / height > 2 / 3) {
+      return {
+        width: 480,
+        height: 270,
+        widthOffset: 3.2,
+        heightOffset: 2,
+      };
+    }
+    return {};
+  }, [width, height]);
+
+  return (
+    <TableContainer>
+      <On>
+        <Notepad />
+        <ComputerContainer>
+          <Computer>
+            <Monitor {...dimension}>{children}</Monitor>
+          </Computer>
+        </ComputerContainer>
+        <CupShadow />
+        <Cup>
+          <Teatag />
+          <Handle />
+          <Top />
+          <TeabagCord />
+          <TeabagCordBeginningAndEnd />
+        </Cup>
+      </On>
+    </TableContainer>
+  );
+};
 
 export default Table;
 

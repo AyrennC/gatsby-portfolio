@@ -4,6 +4,7 @@ export default {
     heading: "'VT323', monospace",
     monospace: "'VT323', monospace",
   },
+  breakpoints: ['900px', '52em', '64em'],
   fontWeights: {
     body: 400,
     heading: 400,
@@ -14,7 +15,7 @@ export default {
     background: '#523c27',
     primary: '#5bf870',
     secondary: '#05321e',
-    muted: '#050505',
+    muted: '#101010',
     accent: '#5cfdff',
   },
   styles: {

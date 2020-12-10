@@ -7,7 +7,7 @@ module.exports = {
   headline: 'Carney Cheng Personal Portfolio', // Headline for schema.org JSONLD
   url: 'https://carneyc.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
-  logo: '/logos/logo-200x200.png', // Used for SEO
+  banner: '/preview.png', // Used for SEO
   ogLanguage: 'en_US', // Facebook Language
 
   // JSONLD / Manifest

@@ -11,7 +11,7 @@ module.exports = {
     title: website.title,
     titleAlt: website.titleAlt,
     description: website.description,
-    banner: website.logo,
+    banner: website.banner,
     headline: website.headline,
     siteLanguage: website.siteLanguage,
     ogLanguage: website.ogLanguage,
@@ -23,6 +23,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-graphql-config`,
     'gatsby-plugin-theme-ui',
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-google-analytics',

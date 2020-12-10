@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { jsx } from 'theme-ui';
 
 const blink = keyframes`
   78% {
@@ -35,10 +37,11 @@ const blink = keyframes`
   }
 `;
 
-const NeonSign = styled.div`
+const NeonSignContainer = styled.div`
   text-align: left;
   height: 250px;
   user-select: none;
+  z-index: 10;
 
   b {
     font: 400 16vh 'VT323';
@@ -53,5 +56,13 @@ const NeonSign = styled.div`
     animation: ${blink} linear infinite 3s;
   }
 `;
+
+const NeonSign = (props) => (
+  <NeonSignContainer {...props}>
+    <b>
+      c<span>ar</span>n<span>eyc</span>.
+    </b>
+  </NeonSignContainer>
+);
 
 export default NeonSign;

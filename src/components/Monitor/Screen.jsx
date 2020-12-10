@@ -184,7 +184,7 @@ const StyledScreen = styled.div`
         rgba(0, 0, 255, 0.06)
       );
     z-index: 2;
-    background-size: 100% 2px, 3px 100%;
+    background-size: 100% 6px, 4px 100%;
     pointer-events: none;
   }
 `;

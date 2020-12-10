@@ -8,7 +8,6 @@ const MacintoshContainer = styled.div`
   display: block;
   width: ${({ width }) => width}px;
   height: 475px;
-  margin: 125px auto;
   position: relative;
   box-shadow: 0 80px 60px -60px rgba(0, 0, 0, 0.4);
 `;
@@ -222,8 +221,8 @@ Macintosh.propTypes = {
 };
 
 Macintosh.defaultProps = {
-  width: 500,
-  height: 270,
-  widthOffset: 4,
-  heightOffset: 2,
+  width: 340,
+  height: 260,
+  widthOffset: 0,
+  heightOffset: 0,
 };
