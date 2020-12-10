@@ -44,7 +44,7 @@ const NeonSignContainer = styled.div`
   z-index: 10;
 
   b {
-    font: 400 16vh 'VT323';
+    font-size: 16vh;
     color: #fee;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
       0 0 0.1em #ff4444, 0 10px 3px #000;
