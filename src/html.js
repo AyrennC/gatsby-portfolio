@@ -10,7 +10,7 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
           name="viewport"
-          content="width=900, initial-scale=1, viewport-fit=cover"
+          content="width=900"
         />
         {props.headComponents}
       </head>
