@@ -12,7 +12,8 @@ const DecorationsContainer = styled.div`
 
   @media (orientation: portrait) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 12vw;
   }
 `;
 

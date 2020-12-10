@@ -44,7 +44,11 @@ const NeonSignContainer = styled.div`
   z-index: 10;
 
   b {
-    font-size: 16vh;
+    font-size: 120px;
+    @media (max-aspect-ratio: 7 / 8) {
+      font-size: 20vw;
+    }
+
     color: #fee;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
       0 0 0.1em #ff4444, 0 10px 3px #000;
