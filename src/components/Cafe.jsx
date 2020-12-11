@@ -2,7 +2,7 @@
 import Decorations from './Decorations';
 import Table from './Table';
 import Terminal from './Terminal';
-import Window from './Window';
+import Window from './Window/Window';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
 

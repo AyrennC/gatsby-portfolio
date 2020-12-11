@@ -41,7 +41,6 @@ const NeonSignContainer = styled.div`
   text-align: left;
   height: 250px;
   user-select: none;
-  z-index: 10;
 
   b {
     font-size: 120px;

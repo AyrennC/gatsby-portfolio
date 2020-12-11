@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import Monitor from './Monitor';
 import useWindowSize from '../hooks/useWindowSize';
-import GrassTile from '../images/grass-tile.png';
+import TableTile from '../images/table-tile.png';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
@@ -23,11 +23,10 @@ const TableContainer = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
-  background: #8bc34a url(${GrassTile});
+  background: #8bc34a url(${TableTile});
   background-size: contain;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  box-shadow: inset 0 -16px 0 0 #396343;
 `;
 
 const Notepad = styled.div`

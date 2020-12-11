@@ -18,6 +18,7 @@ const DecorationsContainer = styled.div`
 const NeonSignContainer = styled.div`
   padding-left: 12vw;
   padding-top: 4vh;
+  z-index: 10;
 `;
 
 const PortraitContainer = styled.div`
