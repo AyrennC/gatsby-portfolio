@@ -1,6 +1,54 @@
 /** @jsx jsx */
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
+
+const smoke = keyframes`
+  0% {
+    opacity: 0.1;
+    top: 35px;
+  }
+  50% {opacity: 1;}
+  100% {
+    width: 30px;
+    opacity: 0.1;
+    box-shadow: 2px -5px 20px 15px rgba(220,220,220,0.7),
+    inset 2px -5px 20px 5px rgba(220,220,220,0.7);
+    top: -20px;
+  }
+`;
+
+const Smoke = styled.div`
+  position: absolute;
+  bottom: 170px;
+  left: 26px;
+  z-index: 20;
+  opacity: 0.6;
+
+  div {
+    position: absolute;
+    left: 20px;
+    border-radius: 50%;
+    height: 30px;
+    width: 6px;
+    box-shadow: 2px -5px 20px 15px #fff, inset 2px -5px 20px 5px #fff;
+    animation: ${smoke} 8s infinite;
+
+    &:nth-child(2) {
+      left: 0;
+      animation: ${smoke} 8s infinite -3s;
+    }
+
+    &:nth-child(3) {
+      left: 60px;
+      animation: ${smoke} 8s infinite -1s;
+    }
+    &:nth-child(4) {
+      left: 30px;
+      animation: ${smoke} 8s infinite -4s;
+    }
+  }
+`;
 
 const CupContainer = styled.div`
   z-index: 10;
@@ -133,6 +181,12 @@ const Cup = (props) => (
   <div {...props}>
     <CupShadow />
     <CupContainer>
+      <Smoke>
+        <div />
+        <div />
+        <div />
+        <div />
+      </Smoke>
       <Teatag />
       <Handle />
       <Top />
