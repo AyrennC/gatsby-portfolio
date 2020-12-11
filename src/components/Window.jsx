@@ -5,9 +5,12 @@ import styled from '@emotion/styled';
 const Window = styled.div`
   background-image: url(${Cityscape});
   background-size: cover;
-  height: calc(40vh);
+  margin-top: 6vh;
+  height: 40vh;
   width: 80vw;
   position: absolute;
+  border: 12px #b95144 solid;
+  border-left: none;
 `;
 
 export default Window;
