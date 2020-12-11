@@ -9,25 +9,28 @@ const DecorationsContainer = styled.div`
   max-width: 1024px;
   display: flex;
   justify-content: space-around;
+  position: relative;
 
-  @media (orientation: portrait) {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 12vw;
-  }
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+const NeonSignContainer = styled.div`
+  padding-left: 12vw;
+  padding-top: 4vh;
 `;
 
 const PortraitContainer = styled.div`
-  @media (orientation: portrait) {
-    position: absolute;
-    right: 20px;
-    top: 40px;
-  }
+  position: absolute;
+  right: 20px;
+  top: 40px;
 `;
 
 const Decorations = () => (
   <DecorationsContainer>
-    <NeonSign sx={{ marginTop: 4 }} />
+    <NeonSignContainer>
+      <NeonSign sx={{ marginTop: 4 }} />
+    </NeonSignContainer>
     <PortraitContainer>
       <Portrait sx={{ marginTop: 4, marginRight: 4 }} />
     </PortraitContainer>

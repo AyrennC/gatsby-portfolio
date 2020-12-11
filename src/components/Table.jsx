@@ -19,7 +19,7 @@ const On = styled.div`
 `;
 
 const TableContainer = styled.div`
-  height: 377px;
+  height: 36vh;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -60,15 +60,13 @@ const Notepad = styled.div`
   );
   box-shadow: -10px 0 0 0 rgba(172, 91, 20, 0.2);
   position: absolute;
-  bottom: 43px;
-  left: 76px;
   overflow: hidden;
+  bottom: 80px;
+  left: auto;
+  right: 0;
+  transform: rotate(20deg);
 
   @media (orientation: portrait) {
-    position: absolute;
-    bottom: 80px;
-    left: auto;
-    right: 0;
     transform: scale(1.2) rotate(20deg);
   }
 `;
@@ -78,18 +76,13 @@ const Cup = styled.div`
   height: 155px;
   width: 131px;
   position: absolute;
-  bottom: 269px;
-  left: 60px;
+  bottom: 74px;
+  left: 40px;
   background: #1d80c2;
   border-top-left-radius: 50% 34%;
   border-top-right-radius: 50% 34%;
   border-bottom-left-radius: 45% 67%;
   border-bottom-right-radius: 45% 67%;
-
-  @media (orientation: portrait) {
-    bottom: 74px;
-    left: 40px;
-  }
 
   @media (max-aspect-ratio: 7 / 8) {
     transform: scale(1.2);
@@ -105,13 +98,11 @@ const CupShadow = styled.div`
   border-bottom-left-radius: 56px;
   border-bottom-right-radius: 56px;
   position: absolute;
-  bottom: 265px;
-  left: 52px;
+  bottom: 70px;
+  left: 32px;
 
   @media (orientation: portrait) {
     transform: scale(1.2);
-    bottom: 70px;
-    left: 32px;
   }
 
   @media (max-aspect-ratio: 7 / 8) {
@@ -156,8 +147,8 @@ const Teatag = styled.div`
 
   &::before {
     content: '';
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     position: absolute;
     top: -8px;
     border-style: solid;
@@ -201,22 +192,17 @@ const TeabagCordBeginningAndEnd = styled.div`
   }
   &::after {
     top: 38px;
-    left: 0px;
+    left: 0;
     height: 6px;
     width: 6px;
   }
 `;
 
 const ComputerContainer = styled.div`
-  position: absolute;
-  bottom: 120px;
-
-  @media (orientation: portrait) {
-    left: 0;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 120px;
 `;
 
 const Computer = styled.div`

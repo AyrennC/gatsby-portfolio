@@ -1,17 +1,12 @@
 /** @jsx jsx */
-import Decorations from '../components/Decorations';
+import Cafe from '../components/Cafe';
 import Layout from '../components/Layout';
-import Table from '../components/Table';
-import Terminal from '../components/Terminal';
 import { jsx } from 'theme-ui';
 
 const IndexPage = () => (
   <Layout>
     <main>
-      <Decorations />
-      <Table>
-        <Terminal />
-      </Table>
+      <Cafe />
     </main>
   </Layout>
 );
