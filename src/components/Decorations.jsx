@@ -16,9 +16,14 @@ const DecorationsContainer = styled.div`
 `;
 
 const NeonSignContainer = styled.div`
-  padding-left: 12vw;
-  padding-top: 4vh;
-  z-index: 10;
+  z-index: 1;
+  margin-left: 6%;
+  margin-top: 8%;
+
+  @media (min-width: 1200px) {
+    margin-top: 10%;
+    margin-left: -5%;
+  }
 `;
 
 const PortraitContainer = styled.div`
@@ -30,7 +35,7 @@ const PortraitContainer = styled.div`
 const Decorations = () => (
   <DecorationsContainer>
     <NeonSignContainer>
-      <NeonSign sx={{ marginTop: 4 }} />
+      <NeonSign />
     </NeonSignContainer>
     <PortraitContainer>
       <Portrait sx={{ marginTop: 4, marginRight: 4 }} />

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import Decorations from './Decorations';
-import Table from './Table';
+import Table from './Table/Table';
 import Terminal from './Terminal';
 import Window from './Window/Window';
 import styled from '@emotion/styled';

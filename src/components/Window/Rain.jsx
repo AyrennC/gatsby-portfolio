@@ -28,7 +28,7 @@ const AnimateDroplet = (props) => {
   const left = random(100);
   const opacity = (random(30) + 30) * 0.01;
   const delay = random(20) - 1;
-  const width = random(6) + 2;
+  const width = random(1.5) + 1;
 
   const drop = keyframes`
     0% {
@@ -79,5 +79,5 @@ Rain.propTypes = {
 };
 
 Rain.defaultProps = {
-  droplets: 300,
+  droplets: 160,
 };

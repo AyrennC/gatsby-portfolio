@@ -51,12 +51,14 @@ const NeonSignContainer = styled.div`
     color: #fee;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
       0 0 0.1em #ff4444, 0 10px 3px #000;
-  }
-  b span {
-    animation: ${blink} linear infinite 2s;
-  }
-  b span:nth-of-type(2) {
-    animation: ${blink} linear infinite 3s;
+
+    span {
+      animation: ${blink} linear infinite 2s;
+    }
+
+    span:nth-of-type(2) {
+      animation: ${blink} linear infinite 3s;
+    }
   }
 `;
 

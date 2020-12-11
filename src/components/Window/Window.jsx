@@ -10,6 +10,7 @@ const WindowContainer = styled.div`
   margin-top: 6vh;
   height: 45vh;
   width: 80vw;
+  max-width: 1280px;
   position: absolute;
   border: 1.4vh #843031 solid;
   border-bottom: 1.8vh #b7564a solid;
