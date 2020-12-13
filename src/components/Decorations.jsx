@@ -16,14 +16,10 @@ const DecorationsContainer = styled.div`
 `;
 
 const NeonSignContainer = styled.div`
-  z-index: 1;
-  margin-left: 6%;
-  margin-top: 8%;
-
-  @media (min-width: 1200px) {
-    margin-top: 10%;
-    margin-left: -5%;
-  }
+  position: absolute;
+  z-index: 10;
+  left: 5%;
+  top: 8%;
 `;
 
 const PortraitContainer = styled.div`
@@ -33,14 +29,16 @@ const PortraitContainer = styled.div`
 `;
 
 const Decorations = () => (
-  <DecorationsContainer>
+  <div sx={{ width: '100%', height: '100%' }}>
     <NeonSignContainer>
       <NeonSign />
     </NeonSignContainer>
-    <PortraitContainer>
-      <Portrait sx={{ marginTop: 4, marginRight: 4 }} />
-    </PortraitContainer>
-  </DecorationsContainer>
+    <DecorationsContainer>
+      <PortraitContainer>
+        <Portrait sx={{ marginTop: 4, marginRight: 4 }} />
+      </PortraitContainer>
+    </DecorationsContainer>
+  </div>
 );
 
 export default Decorations;

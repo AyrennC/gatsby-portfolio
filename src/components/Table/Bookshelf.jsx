@@ -49,12 +49,25 @@ const Shelf = styled.div`
 const Clock = styled.div`
   width: 128px;
   height: 128px;
-  background-color: #e9e6c9;
   border: 10px solid #c15042;
+  background: #75372f;
   position: absolute;
   border-radius: 50%;
   left: 30px;
   top: -135px;
+
+  &::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    background-color: #e9e6c9;
+    top: 5px;
+    left: 5px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border-radius: 50%;
+    z-index: 0;
+  }
 `;
 
 const Knot = styled.div`

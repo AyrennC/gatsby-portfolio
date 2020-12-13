@@ -1,6 +1,10 @@
 /** @jsx jsx */
+import BigBoxComponent from './BigBox';
 import Bookshelf from './Bookshelf';
 import Cup from './Cup';
+import NotepadComponent from './Notepad';
+import OutletComponent from './Outlet';
+import PencilHolderComponent from './PencilHolder';
 import Plant from './Plant';
 import useWindowSize from '../../hooks/useWindowSize';
 import TableTile from '../../images/table-tile.png';
@@ -33,47 +37,6 @@ const TableContainer = styled.div`
   z-index: 1;
 `;
 
-const Notepad = styled.div`
-  height: 193px;
-  width: 136px;
-  background: linear-gradient(
-    to bottom,
-    #f17777 0px,
-    #f17777 34px,
-    #fff 34px,
-    #fff 62px,
-    #cee8ef 62px,
-    #cee8ef 66px,
-    #fffefe 66px,
-    #fff 90px,
-    #cee8ef 90px,
-    #cee8ef 94px,
-    #fff 94px,
-    #fff 118px,
-    #cee8ef 118px,
-    #cee8ef 122px,
-    #fff 122px,
-    #fff 146px,
-    #cee8ef 146px,
-    #cee8ef 150px,
-    #fff 150px,
-    #fff 176px,
-    #cee8ef 176px,
-    #cee8ef 193px
-  );
-  box-shadow: -10px 0 0 0 rgba(172, 91, 20, 0.2);
-  position: absolute;
-  overflow: hidden;
-  bottom: 80px;
-  left: auto;
-  right: 0;
-  transform: rotate(20deg);
-
-  @media (orientation: portrait) {
-    transform: scale(1.2) rotate(20deg);
-  }
-`;
-
 const ComputerContainer = styled.div`
   display: flex;
   width: 100%;
@@ -94,14 +57,26 @@ const Computer = styled.div`
     }
   }
 
-  @media (max-height: 700px) {
-    transform: scale(0.9);
-    margin-bottom: -10%;
-  }
-
   @media (min-width: 1460px) {
     transform: scale(1.2);
     margin-bottom: -2.5%;
+
+    @media (max-height: 890px) {
+      transform: scale(1.1);
+      margin-bottom: -10%;
+    }
+
+    @media (max-height: 800px) {
+      transform: scale(1);
+    }
+
+    @media (max-height: 700px) {
+      transform: scale(0.9);
+    }
+
+    @media (max-height: 650px) {
+      transform: scale(0.8);
+    }
   }
 `;
 
@@ -116,13 +91,52 @@ const PlantContainer = styled.div`
   }
 `;
 
-const ClutterContainer = styled.div`
+const Clutters = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
   @media (max-aspect-ratio: 7 / 8) {
     display: none;
   }
+`;
+
+const BigBox = styled(BigBoxComponent)`
+  position: absolute;
+  right: 214px;
+  bottom: 110%;
+`;
+
+const PencilHolder = styled(PencilHolderComponent)`
+  position: absolute;
+  right: 90px;
+  bottom: 90px;
+  z-index: 20;
+
+  @media (max-aspect-ratio: 2 / 3) and (min-width: 900px) {
+    right: 50px;
+    bottom: 20px;
+    transform: scale(4);
+    transform-origin: 50% 100%;
+  }
+`;
+
+const Notepad = styled(NotepadComponent)`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
+const TableClutters = styled.div`
+  position: absolute;
+  bottom: 8%;
+`;
+
+const Outlet = styled(OutletComponent)`
+  position: absolute;
+  display: inline-block;
+  transform: scale(1.8);
+  bottom: 40vh;
+  left: calc(52% + 290px);
 `;
 
 const Table = ({ children }) => {
@@ -141,11 +155,16 @@ const Table = ({ children }) => {
 
   return (
     <TableContainer>
-      <ClutterContainer>
+      <Clutters>
         <Bookshelf />
-      </ClutterContainer>
+        <Outlet />
+        <BigBox />
+      </Clutters>
       <On>
-        <Notepad />
+        <TableClutters>
+          <Notepad />
+          <PencilHolder />
+        </TableClutters>
         <ComputerContainer>
           <Computer>
             <PlantContainer>

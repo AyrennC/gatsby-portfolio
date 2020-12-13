@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
 
 const MacintoshContainer = styled.div`
-  display: block;
+  display: inline-block;
   width: ${({ width }) => width}px;
   height: 475px;
   position: relative;

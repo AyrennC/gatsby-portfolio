@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import Haskell from './Haskell';
-import PortraitBackground from '../images/portrait-background.jpg';
+import Haskell from './Icons/Haskell';
+import PortraitBackground from '../images/portrait-background.png';
 import PortraitImage from '../images/potrait-64.png';
 import styled from '@emotion/styled';
 import { Image } from '@theme-ui/components';

@@ -4,8 +4,6 @@ import { jsx } from 'theme-ui';
 
 const Haskell = ({ color, ...props }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    version="1.0"
     width="1.4em"
     height="1em"
     viewBox="0 0 728.000000 508.000000"
