@@ -60,23 +60,23 @@ const Computer = styled.div`
   @media (min-width: 1460px) {
     transform: scale(1.2);
     margin-bottom: -2.5%;
+  }
 
-    @media (max-height: 890px) {
-      transform: scale(1.1);
-      margin-bottom: -10%;
-    }
+  @media (max-height: 890px) {
+    transform: scale(1.1);
+    margin-bottom: -10%;
+  }
 
-    @media (max-height: 800px) {
-      transform: scale(1);
-    }
+  @media (max-height: 800px) {
+    transform: scale(1);
+  }
 
-    @media (max-height: 700px) {
-      transform: scale(0.9);
-    }
+  @media (max-height: 700px) {
+    transform: scale(0.9);
+  }
 
-    @media (max-height: 650px) {
-      transform: scale(0.8);
-    }
+  @media (max-height: 650px) {
+    transform: scale(0.8);
   }
 `;
 
@@ -112,7 +112,7 @@ const PencilHolder = styled(PencilHolderComponent)`
   bottom: 90px;
   z-index: 20;
 
-  @media (max-aspect-ratio: 2 / 3) and (min-width: 900px) {
+  @media (orientation: portrait) {
     right: 50px;
     bottom: 20px;
     transform: scale(4);

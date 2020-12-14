@@ -28,7 +28,7 @@ const AnimateDroplet = (props) => {
   const left = random(100);
   const opacity = (random(30) + 30) * 0.01;
   const delay = random(20) - 1;
-  const width = random(1.5) + 1.5;
+  const width = random(1) + 1.5;
 
   const drop = keyframes`
     0% {
