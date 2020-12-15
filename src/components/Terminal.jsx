@@ -32,6 +32,12 @@ const Caret = styled.span`
   }
 `;
 
+const Title = styled.h1`
+  @media (max-aspect-ratio: 2 / 3) {
+    font-size: 1.8em;
+  }
+`;
+
 const Paragraph = styled.p`
   @media (min-aspect-ratio: 2 / 3) {
     font-size: 1.2rem;
@@ -40,7 +46,7 @@ const Paragraph = styled.p`
 
 const Terminal = () => (
   <Typist avgTypingDelay={30} stdTypingDelay={25} cursor={{ show: false }}>
-    <h1>Hi, I am Carney!</h1>
+    <Title>Hi, I&apos;m Carney!</Title>
     <Paragraph>
       <Caret>
         &gt; just a simple man trying to make my way as a developer.
