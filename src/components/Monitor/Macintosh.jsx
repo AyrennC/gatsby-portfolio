@@ -1,15 +1,46 @@
 /** @jsx jsx */
 import Socials from './Socials';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
 
+const applyMediaQuery = (styleFactory) => ([query, dimension]) => css`
+  ${query} {
+    ${styleFactory(dimension)}
+  }
+`;
+
+const applyMediaQueries = (styleFactory) => ({
+  defaultDimension,
+  dimensions,
+}) => [
+  styleFactory(defaultDimension),
+  ...Object.entries(dimensions).map(applyMediaQuery(styleFactory)),
+];
+
+const MacintoshStyleFactory = ({ width }) => css`
+  width: ${width}px;
+`;
+
 const MacintoshContainer = styled.div`
   display: inline-block;
-  width: ${({ width }) => width}px;
   height: 475px;
   position: relative;
   box-shadow: 0 80px 60px -60px rgba(0, 0, 0, 0.4);
+  ${applyMediaQueries(MacintoshStyleFactory)}
+`;
+
+const monitorStyleFactory = ({ widthOffset }) => css`
+  background-image: conic-gradient(
+    #dddbc2 0 ${10.5 + widthOffset}%,
+    #ececd5 ${11 + widthOffset}% ${11.5 + widthOffset}%,
+    #cecdaf ${12 + widthOffset}% ${38 - widthOffset}%,
+    #c8c4a7 ${39 - widthOffset}% ${61.5 - widthOffset}%,
+    #c7c3a6 ${62 - widthOffset}% ${88 - widthOffset}%,
+    #dfdac4 ${88.5 - widthOffset}% ${89 - widthOffset}%,
+    #dddbc2 ${89.25 - widthOffset}%
+  );
 `;
 
 const Monitor = styled.div`
@@ -21,16 +52,8 @@ const Monitor = styled.div`
   background-color: #dddbc2;
   position: absolute;
   background-image: linear-gradient(#dddbc2, #dfdac4);
-  background-image: ${({ widthOffset }) => `conic-gradient(
-    #dddbc2 0 ${10.5 + widthOffset}%,
-    #ececd5 ${11 + widthOffset}% ${11.5 + widthOffset}%,
-    #cecdaf ${12 + widthOffset}% ${38 - widthOffset}%,
-    #c8c4a7 ${39 - widthOffset}% ${61.5 - widthOffset}%,
-    #c7c3a6 ${62 - widthOffset}% ${88 - widthOffset}%,
-    #dfdac4 ${88.5 - widthOffset}% ${89 - widthOffset}%,
-    #dddbc2 ${89.25 - widthOffset}%
-  );`} /* Not supported everywhere :( */
   box-shadow: 0 60px 20px -20px rgba(142, 137, 97, 0.5);
+  ${applyMediaQueries(monitorStyleFactory)}
 `;
 
 const MonitorInner = styled.div`
@@ -45,9 +68,20 @@ const MonitorInner = styled.div`
   border-radius: 5px;
 `;
 
+const screenCutoutStyleFactory = ({ height, widthOffset, heightOffset }) => css`
+  height: ${height}px;
+  background-image: conic-gradient(
+    #938f6a ${12.5 + widthOffset}%,
+    #b5b293 ${15.5 + widthOffset}% ${33 - widthOffset}%,
+    #e0dfc3 ${34 - widthOffset + heightOffset}%
+      ${65.5 + widthOffset - heightOffset}%,
+    #c2c1a2 ${66.5 + widthOffset}% ${83.5 - widthOffset}%,
+    #938f6a ${86.5 + widthOffset}%
+  );
+`;
+
 const ScreenCutout = styled.div`
   display: block;
-  height: ${({ height }) => height}px;
   background-color: #dddbc2;
   margin: 0 20px;
   position: absolute;
@@ -56,19 +90,15 @@ const ScreenCutout = styled.div`
   top: 20px;
   border-radius: 5px;
   background-image: linear-gradient(#938f6a, #e0dfc3);
-  background-image: ${({ widthOffset, heightOffset }) => `conic-gradient(
-    #938f6a ${12.5 + widthOffset}%,
-    #b5b293 ${15.5 + widthOffset}% ${33 - widthOffset}%,
-    #e0dfc3 ${34 - widthOffset + heightOffset}%
-      ${65.5 + widthOffset - heightOffset}%,
-    #c2c1a2 ${66.5 + widthOffset}% ${83.5 - widthOffset}%,
-    #938f6a ${86.5 + widthOffset}%
-  );`};
+  ${applyMediaQueries(screenCutoutStyleFactory)}
+`;
+
+const screenStyleFactory = ({ height }) => css`
+  height: ${height - 30}px;
 `;
 
 const Screen = styled.div`
   display: block;
-  height: ${({ height }) => height - 30}px;
   background-color: #4f5555;
   background-image: radial-gradient(#525b5a, #50585a);
   margin: 0 10px;
@@ -78,6 +108,7 @@ const Screen = styled.div`
   right: 0;
   border-radius: 20px;
   box-shadow: 0 0 20px 10px #2b3030 inset;
+  ${applyMediaQueries(screenStyleFactory)}
 `;
 
 const Logo = styled.div`
@@ -89,7 +120,7 @@ const Logo = styled.div`
   position: absolute;
   left: 22px;
   bottom: 18px;
-  box-shadow: 0 0 2px 0px #979181 inset;
+  box-shadow: 0 0 2px 0 #979181 inset;
 `;
 
 const Opening = styled.div`
@@ -146,7 +177,7 @@ const Insert = styled.div`
   bottom: 20px;
   left: 35px;
   border-radius: 2px;
-  box-shadow: 0 0 2px #c9c3a3 inset, 0 0px 2px 1px #bcb694;
+  box-shadow: 0 0 2px #c9c3a3 inset, 0 0 2px 1px #bcb694;
 `;
 
 const CableContainer = styled.div`
@@ -182,47 +213,63 @@ const CableHole = styled.div`
     linear-gradient(90deg, transparent 30%, #181914 30% 70%, transparent 70%);
 `;
 
-const Macintosh = ({ width, height, widthOffset, heightOffset, children }) => (
-  <MacintoshContainer width={width}>
-    <Monitor widthOffset={widthOffset}>
-      <MonitorInner>
-        <ScreenCutout
-          height={height}
-          widthOffset={widthOffset}
-          heightOffset={heightOffset}
-        >
-          <Screen height={height}>{children}</Screen>
-        </ScreenCutout>
-        <Logo>
-          <Socials />
-        </Logo>
-        <Opening>
-          <OpeningInner />
-        </Opening>
-      </MonitorInner>
-    </Monitor>
-    <Foot>
-      <Insert />
-      <CableContainer>
-        <CableHole />
-      </CableContainer>
-    </Foot>
-  </MacintoshContainer>
-);
+const Macintosh = ({ dimensions, children }) => {
+  const styles = {
+    defaultDimension: {
+      width: 340,
+      height: 260,
+      widthOffset: 0,
+      heightOffset: 0,
+    },
+    dimensions,
+  };
+
+  return (
+    <MacintoshContainer {...styles}>
+      <Monitor {...styles}>
+        <MonitorInner>
+          <ScreenCutout {...styles}>
+            <Screen {...styles}>{children}</Screen>
+          </ScreenCutout>
+          <Logo>
+            <Socials />
+          </Logo>
+          <Opening>
+            <OpeningInner />
+          </Opening>
+        </MonitorInner>
+      </Monitor>
+      <Foot>
+        <Insert />
+        <CableContainer>
+          <CableHole />
+        </CableContainer>
+      </Foot>
+    </MacintoshContainer>
+  );
+};
 
 export default Macintosh;
 
 Macintosh.propTypes = {
   children: PropTypes.element.isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  widthOffset: PropTypes.number,
-  heightOffset: PropTypes.number,
+  dimensions: PropTypes.objectOf(
+    PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+      widthOffset: PropTypes.number,
+      heightOffset: PropTypes.number,
+    }),
+  ),
 };
 
 Macintosh.defaultProps = {
-  width: 340,
-  height: 260,
-  widthOffset: 0,
-  heightOffset: 0,
+  dimensions: {
+    '@media (min-aspect-ratio: 2 / 3)': {
+      width: 480,
+      height: 270,
+      widthOffset: 3.2,
+      heightOffset: 2,
+    },
+  },
 };

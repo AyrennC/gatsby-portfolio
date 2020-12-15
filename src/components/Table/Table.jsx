@@ -144,45 +144,30 @@ const Outlet = styled(OutletComponent)`
   left: calc(52% + 290px);
 `;
 
-const Table = ({ children }) => {
-  const { width, height } = useWindowSize();
-  const dimension = useMemo(() => {
-    if (width / height > 2 / 3) {
-      return {
-        width: 480,
-        height: 270,
-        widthOffset: 3.2,
-        heightOffset: 2,
-      };
-    }
-    return {};
-  }, [width, height]);
-
-  return (
-    <TableContainer>
-      <Clutters>
-        <Bookshelf />
-        <Outlet />
-        <BigBox />
-      </Clutters>
-      <On>
-        <TableClutters>
-          <Notepad />
-          <PencilHolder />
-        </TableClutters>
-        <ComputerContainer>
-          <Computer>
-            <PlantContainer>
-              <Plant />
-            </PlantContainer>
-            <Monitor {...dimension}>{children}</Monitor>
-          </Computer>
-        </ComputerContainer>
-        <Cup />
-      </On>
-    </TableContainer>
-  );
-};
+const Table = ({ children }) => (
+  <TableContainer>
+    <Clutters>
+      <Bookshelf />
+      <Outlet />
+      <BigBox />
+    </Clutters>
+    <On>
+      <TableClutters>
+        <Notepad />
+        <PencilHolder />
+      </TableClutters>
+      <ComputerContainer>
+        <Computer>
+          <PlantContainer>
+            <Plant />
+          </PlantContainer>
+          <Monitor>{children}</Monitor>
+        </Computer>
+      </ComputerContainer>
+      <Cup />
+    </On>
+  </TableContainer>
+);
 
 export default Table;
 
