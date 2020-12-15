@@ -16,6 +16,7 @@ const WindowContainer = styled.div`
   border-bottom: 1.8vh #b7564a solid;
   border-left: none;
   border-radius: 0 8px 8px 0;
+  pointer-events: none;
 
   &::before {
     background: none;

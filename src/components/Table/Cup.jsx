@@ -34,16 +34,16 @@ const Smoke = styled.div`
     box-shadow: 2px -5px 20px 15px #fff, inset 2px -5px 20px 5px #fff;
     animation: ${smoke} 8s infinite;
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       left: 0;
       animation: ${smoke} 8s infinite -3s;
     }
 
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       left: 60px;
       animation: ${smoke} 8s infinite -1s;
     }
-    &:nth-child(4) {
+    &:nth-of-type(4) {
       left: 30px;
       animation: ${smoke} 8s infinite -4s;
     }

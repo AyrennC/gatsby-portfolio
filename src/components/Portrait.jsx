@@ -10,6 +10,7 @@ const PortraitContainer = styled.div`
   display: inline-block;
   background: #1d0f13;
   padding: 12px 12px 4px 12px;
+  pointer-events: none;
 `;
 
 const Frame = styled.div`

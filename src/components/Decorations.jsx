@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import NeonSign from './NeonSign';
+import PicturesComponent from './Pictures';
 import Portrait from './Portrait';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
@@ -48,6 +49,17 @@ const PortraitContainer = styled.div`
   }
 `;
 
+const Pictures = styled(PicturesComponent)`
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  z-index: -1;
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
+`;
+
 const Decorations = () => (
   <div sx={{ width: '100%', height: '100%' }}>
     <NeonSignContainer>
@@ -58,6 +70,7 @@ const Decorations = () => (
         <Portrait sx={{ marginTop: 4, marginRight: 4 }} />
       </PortraitContainer>
     </DecorationsContainer>
+    <Pictures />
   </div>
 );
 
