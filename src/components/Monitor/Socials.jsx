@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import Github from '../../images/github.png';
-import Linkedin from '../../images/linkedin.png';
+import Github from '../../images/github-icon.png';
+import Linkedin from '../../images/linkedin-icon.png';
 import styled from '@emotion/styled';
 import { Image } from '@theme-ui/components';
 import { jsx } from 'theme-ui';

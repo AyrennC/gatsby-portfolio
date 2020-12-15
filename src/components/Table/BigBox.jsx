@@ -7,8 +7,6 @@ const BigBoxContainer = styled.div`
   height: auto;
   display: inline-block;
   margin-left: 80px;
-  position: absolute;
-  cursor: pointer;
   transform: scale(2);
 
   &::after {
