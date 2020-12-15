@@ -6,12 +6,10 @@ import NotepadComponent from './Notepad';
 import OutletComponent from './Outlet';
 import PencilHolderComponent from './PencilHolder';
 import Plant from './Plant';
-import useWindowSize from '../../hooks/useWindowSize';
 import TableTile from '../../images/table-tile.png';
 import Monitor from '../Monitor';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import { useMemo } from 'react';
 import { jsx } from 'theme-ui';
 
 const On = styled.div`
@@ -23,6 +21,22 @@ const On = styled.div`
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (min-height: 1024px) {
+    transform: translate(-50%, -10%) scale(1.1);
+  }
+
+  @media (min-height: 1300px) {
+    transform: translate(-50%, -20%) scale(1.3);
+  }
+
+  @media (min-height: 1440px) {
+    transform: translate(-50%, -20%) scale(1.4);
+  }
+
+  @media (min-height: 1600px) {
+    transform: translate(-50%, -30%) scale(1.5);
+  }
 `;
 
 const TableContainer = styled.div`
@@ -108,7 +122,7 @@ const Clutters = styled.div`
 const BigBox = styled(BigBoxComponent)`
   position: absolute;
   right: 214px;
-  bottom: 110%;
+  bottom: 105%;
 `;
 
 const PencilHolder = styled(PencilHolderComponent)`

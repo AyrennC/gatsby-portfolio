@@ -26,6 +26,24 @@ const PortraitContainer = styled.div`
   position: absolute;
   right: 20px;
   top: 40px;
+
+  @media (min-height: 900px) {
+    transform: scale(1.1);
+  }
+
+  @media (min-height: 1200px) {
+    transform: scale(1.4);
+  }
+
+  @media (min-height: 1440px) {
+    top: 60px;
+    transform: scale(1.6);
+  }
+
+  @media (min-height: 1600px) {
+    top: 80px;
+    transform: scale(1.8);
+  }
 `;
 
 const Decorations = () => (
