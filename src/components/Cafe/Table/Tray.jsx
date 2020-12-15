@@ -177,7 +177,7 @@ const BookLeft = styled(Book)`
   background-color: #9d374f;
 `;
 
-const BookMid = styled(Book)`
+const BookMiddle = styled(Book)`
   height: 195px;
   top: -195px;
   left: 250px;
@@ -242,7 +242,7 @@ const PlantRight = styled(Plant)`
   background-color: #479856;
 `;
 
-const Bookshelf = () => (
+const Tray = () => (
   <Shelf>
     <Clock>
       <Knot />
@@ -253,7 +253,7 @@ const Bookshelf = () => (
       <ClockFootRight />
     </Clock>
     <BookLeft />
-    <BookMid />
+    <BookMiddle />
     <BookRight />
     <Cactus>
       <Pot>
@@ -266,4 +266,4 @@ const Bookshelf = () => (
   </Shelf>
 );
 
-export default Bookshelf;
+export default Tray;

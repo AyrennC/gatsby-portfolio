@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import Rain from './Rain';
-import Cityscape from '../../images/cityscape.png';
+import Cityscape from '../../../images/cityscape.png';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
 

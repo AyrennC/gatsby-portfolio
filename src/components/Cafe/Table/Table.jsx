@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import BigBox from './BigBox';
-import Bookshelf from './Bookshelf';
 import Cup from './Cup';
 import NotepadComponent from './Notepad';
 import OutletComponent from './Outlet';
 import PencilHolderComponent from './PencilHolder';
 import Plant from './Plant';
-import Resume from '../../data/carney-resume.pdf';
-import TableTile from '../../images/table-tile.png';
+import Tray from './Tray';
+import Resume from '../../../data/carney-resume.pdf';
+import TableTile from '../../../images/table-tile.png';
 import Monitor from '../Monitor';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
@@ -174,7 +174,7 @@ const Outlet = styled(OutletComponent)`
 const Table = ({ children }) => (
   <TableContainer>
     <Clutters>
-      <Bookshelf />
+      <Tray />
       <Outlet />
       <BigBoxContainer
         href={Resume}

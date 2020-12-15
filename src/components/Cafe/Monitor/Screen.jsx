@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import theme from '../../gatsby-plugin-theme-ui';
+import theme from '../../../gatsby-plugin-theme-ui';
 import { keyframes, ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';

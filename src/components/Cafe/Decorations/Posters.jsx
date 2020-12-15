@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import EducationPoster from '../../images/education-poster.png';
-import ExperiencePoster from '../../images/experience-poster.png';
-import ProjectsPoster from '../../images/projects-poster.png';
+import EducationPoster from '../../../images/education-poster.png';
+import ExperiencePoster from '../../../images/experience-poster.png';
+import ProjectsPoster from '../../../images/projects-poster.png';
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
