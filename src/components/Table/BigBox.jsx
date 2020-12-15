@@ -157,9 +157,9 @@ const BigBox = (props) => (
         <Paper>
           <Remarks>Australian National University</Remarks>
           <Skills>
-            - NodeJS
+            - Python
+            <br />- NodeJS
             <br />- Golang
-            <br />- Python
           </Skills>
         </Paper>
       </FolderPaperOuter>
