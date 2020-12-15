@@ -49,6 +49,7 @@ const SEO = ({ title, desc, banner, pathname }) => {
     description: desc || defaultDescription,
     image: `${siteUrl}${banner || defaultBanner}`,
     url: `${siteUrl}${pathname || ''}`,
+    author,
   };
 
   // schema.org in JSONLD format
@@ -116,7 +117,7 @@ const SEO = ({ title, desc, banner, pathname }) => {
         <html lang={siteLanguage} />
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
-        <meta name="gatsby-starter" content="Gatsby Starter Prismic" />
+        <meta name="author" content={seo.author} />
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgWebPage)}
         </script>

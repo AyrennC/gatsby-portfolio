@@ -1,45 +1,39 @@
 # Gatsby Portfolio
 
-**This is very much still in progress, currently a website with nothing.**
+_**The website is still under construction**_
 
-A personal website for demonstrating my projects and experiences
+A personal website for showcasing my projects and work experiences. Hope you like the pixel-art theme!
+
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1. **Clone the repository**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+    Download the source code.
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    git clone https://github.com/CarneyC/gatsby-portfolio.git
+    ```
+   
+2.  **Install dependencies**
+
+    Navigate into your new site’s directory and install dependencies
+    
+    ```shell
+    cd gatsby-portfolio/
+    npm install
     ```
 
-2.  **Start developing.**
+3.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
+    Start the gatsby site up.
 
     ```shell
-    cd my-gatsby-site/
     npm run develop
     ```
+    
+    The site is now running at http://localhost:8000!
+    
+## Publish
 
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.jsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+The website is configured to be hosted on [Netlify](https://www.netlify.com/), you can edit its build configuration by editing `netlify.toml`.
