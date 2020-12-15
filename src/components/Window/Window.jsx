@@ -7,9 +7,9 @@ import { jsx } from 'theme-ui';
 const WindowContainer = styled.div`
   background-image: url(${Cityscape});
   background-size: cover;
-  margin-top: 6vh;
-  height: 45vh;
-  width: 80vw;
+  margin-top: 3%;
+  height: 45%;
+  width: 80%;
   max-width: 1280px;
   position: absolute;
   border: 1.4vh #843031 solid;

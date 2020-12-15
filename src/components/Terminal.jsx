@@ -3,6 +3,7 @@ import Glitch from './Glitch';
 import Resume from '../data/Carney__Resume.pdf';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import Typist from 'react-typist';
 import { jsx } from 'theme-ui';
 
 const cursor = keyframes`
@@ -31,14 +32,20 @@ const Caret = styled.span`
   }
 `;
 
+const Paragraph = styled.p`
+  @media (min-aspect-ratio: 2 / 3) {
+    font-size: 1.2rem;
+  }
+`;
+
 const Terminal = () => (
-  <div>
+  <Typist avgTypingDelay={30} stdTypingDelay={25} cursor={{ show: false }}>
     <h1>Hi, I am Carney!</h1>
-    <p>
-      &gt; just a simple man trying to make my way as a developer.
-      <br />
-      <br />
+    <Paragraph>
       <Caret>
+        &gt; just a simple man trying to make my way as a developer.
+        <br />
+        <br />
         &gt; this website is under construction, but don&apos;t let that stop
         you from taking a look at my{' '}
         <a
@@ -51,8 +58,8 @@ const Terminal = () => (
         </a>
         .
       </Caret>
-    </p>
-  </div>
+    </Paragraph>
+  </Typist>
 );
 
 export default Terminal;

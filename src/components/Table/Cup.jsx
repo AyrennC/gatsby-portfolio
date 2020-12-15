@@ -55,7 +55,7 @@ const CupContainer = styled.div`
   height: 155px;
   width: 131px;
   position: absolute;
-  bottom: 74px;
+  bottom: 17px;
   left: 40px;
   background: #1d80c2;
   border-top-left-radius: 50% 34%;

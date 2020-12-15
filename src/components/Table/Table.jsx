@@ -26,7 +26,7 @@ const On = styled.div`
 `;
 
 const TableContainer = styled.div`
-  height: 36vh;
+  height: 36%;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -95,7 +95,12 @@ const Clutters = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+
   @media (max-aspect-ratio: 7 / 8) {
+    display: none;
+  }
+
+  @media screen and (max-height: 530px) and (orientation: landscape) {
     display: none;
   }
 `;
@@ -135,7 +140,7 @@ const Outlet = styled(OutletComponent)`
   position: absolute;
   display: inline-block;
   transform: scale(1.8);
-  bottom: 40vh;
+  top: -24%;
   left: calc(52% + 290px);
 `;
 

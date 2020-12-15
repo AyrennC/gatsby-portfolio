@@ -9,6 +9,10 @@ import { jsx } from 'theme-ui';
 const CafeContainer = styled.div`
   position: relative;
   min-height: 100vh;
+
+  @media screen and (max-height: 530px) and (orientation: landscape) {
+    min-height: 100vw;
+  }
 `;
 
 const Cafe = () => (
