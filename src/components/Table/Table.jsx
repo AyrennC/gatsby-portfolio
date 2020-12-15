@@ -126,7 +126,11 @@ const BigBoxContainer = styled.a`
   display: block;
   position: absolute;
   right: 214px;
-  bottom: 105%;
+  bottom: 65%;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const PencilHolder = styled(PencilHolderComponent)`
@@ -160,6 +164,11 @@ const Outlet = styled(OutletComponent)`
   transform: scale(1.8);
   top: -24%;
   left: calc(52% + 290px);
+
+  @media (max-width: 1024px) {
+    top: -20%;
+    transform: scale(1) rotate(-90deg);
+  }
 `;
 
 const Table = ({ children }) => (

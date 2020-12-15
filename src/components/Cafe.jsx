@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import Decorations from './Decorations';
-import Table from './Table/Table';
+import Table from './Table';
 import Terminal from './Terminal';
-import Window from './Window/Window';
+import WindowComponent from './Window';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
 
@@ -12,6 +12,12 @@ const CafeContainer = styled.div`
 
   @media screen and (max-height: 530px) and (orientation: landscape) {
     min-height: 100vw;
+  }
+`;
+
+const Window = styled(WindowComponent)`
+  @media (max-width: 1500px) and (min-aspect-ratio: 2 / 3) {
+    width: 65%;
   }
 `;
 

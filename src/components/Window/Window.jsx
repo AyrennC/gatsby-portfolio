@@ -58,8 +58,8 @@ const RainContainer = styled.div`
   overflow: hidden;
 `;
 
-const Window = () => (
-  <WindowContainer>
+const Window = (props) => (
+  <WindowContainer {...props}>
     <RainContainer>
       <Rain />
     </RainContainer>

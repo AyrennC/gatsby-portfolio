@@ -90,7 +90,7 @@ const ScreenCutout = styled.div`
   top: 20px;
   border-radius: 5px;
   background-image: linear-gradient(#938f6a, #e0dfc3);
-  ${applyMediaQueries(screenCutoutStyleFactory)}
+  ${applyMediaQueries(screenCutoutStyleFactory)};
 `;
 
 const screenStyleFactory = ({ height }) => css`
@@ -108,7 +108,7 @@ const Screen = styled.div`
   right: 0;
   border-radius: 20px;
   box-shadow: 0 0 20px 10px #2b3030 inset;
-  ${applyMediaQueries(screenStyleFactory)}
+  ${applyMediaQueries(screenStyleFactory)};
 `;
 
 const Logo = styled.div`

@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import NeonSign from './NeonSign';
-import PicturesComponent from './Pictures';
 import Portrait from './Portrait';
+import PostersComponent from './Posters';
+import Resume from '../../data/carney-resume.pdf';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
 
@@ -46,16 +47,36 @@ const PortraitContainer = styled.div`
       top: 80px;
       transform: scale(1.8);
     }
+
+    @media (max-width: 1500px) and (min-aspect-ratio: 2 / 3) {
+      transform: scale(0.8);
+      top: -50px;
+      right: 10%;
+    }
   }
 `;
 
-const Pictures = styled(PicturesComponent)`
+const Posters = styled(PostersComponent)`
   position: absolute;
-  top: 2%;
-  right: 1%;
-  z-index: -1;
+  top: 5%;
+  right: 2%;
+  max-width: 20%;
+  padding-left: 30px;
 
-  @media (max-width: 1300px) {
+  @media (min-width: 1680px) {
+    max-width: none;
+  }
+
+  @media (max-width: 1620px) {
+    transform: scale(0.8);
+  }
+
+  @media (max-width: 1500px) and (min-aspect-ratio: 2 / 3) {
+    max-width: 30%;
+    top: 8%;
+  }
+
+  @media (orientation: portrait) {
     display: none;
   }
 `;
@@ -65,12 +86,14 @@ const Decorations = () => (
     <NeonSignContainer>
       <NeonSign />
     </NeonSignContainer>
+    <Posters
+      hrefs={{ experience: Resume, projects: Resume, education: Resume }}
+    />
     <DecorationsContainer>
       <PortraitContainer>
         <Portrait sx={{ marginTop: 4, marginRight: 4 }} />
       </PortraitContainer>
     </DecorationsContainer>
-    <Pictures />
   </div>
 );
 

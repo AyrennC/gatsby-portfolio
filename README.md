@@ -29,7 +29,7 @@ A personal website for showcasing my projects and work experiences. Hope you lik
     Start the gatsby site up.
 
     ```shell
-    npm run develop
+    npm run dev
     ```
     
     The site is now running at http://localhost:8000!
