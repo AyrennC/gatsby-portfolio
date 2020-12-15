@@ -50,7 +50,6 @@ const Clock = styled.div`
   width: 128px;
   height: 128px;
   border: 10px solid #c15042;
-  background: #75372f;
   position: absolute;
   border-radius: 50%;
   left: 30px;
@@ -63,10 +62,23 @@ const Clock = styled.div`
     background-color: #e9e6c9;
     top: 5px;
     left: 5px;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
+    width: calc(100% - 7px);
+    height: calc(100% - 7px);
     border-radius: 50%;
-    z-index: 0;
+    z-index: -1;
+  }
+
+  &::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    background: linear-gradient(135deg, #75372f 30%, #e9e6c9 70%);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index: -2;
   }
 `;
 
@@ -119,7 +131,7 @@ const ClockFoot = styled.div`
   background-color: #47321a;
   position: absolute;
   bottom: -25px;
-  z-index: -1;
+  z-index: -10;
 `;
 
 const ClockFootLeft = styled(ClockFoot)`
