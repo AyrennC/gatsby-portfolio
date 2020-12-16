@@ -125,19 +125,19 @@ export const StyledCandyBowl = styled(StyledComponent)`
       transform: rotate(45deg);
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       top: 5px;
       left: 45px;
       z-index: 8;
     }
 
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       top: 10px;
       left: 5px;
       z-index: 12;
     }
 
-    &:nth-child(4) {
+    &:nth-of-type(4) {
       top: 29px;
       left: 30px;
       z-index: 5;
@@ -165,20 +165,20 @@ export const StyledCandyBowl = styled(StyledComponent)`
       opacity: 0.3;
     }
 
-    &:nth-child(5) {
+    &:nth-of-type(5) {
       top: 35px;
       left: 50px;
       transform: rotate(-45deg);
       z-index: 11;
     }
 
-    &:nth-child(6) {
+    &:nth-of-type(6) {
       top: 40px;
       left: 2px;
       transform: rotate(-45deg);
     }
 
-    &:nth-child(7) {
+    &:nth-of-type(7) {
       top: 13px;
       left: 28px;
       transform: rotate(25deg);
@@ -210,19 +210,19 @@ export const StyledCandyBowl = styled(StyledComponent)`
       opacity: 0.5;
     }
 
-    &:nth-child(9) {
+    &:nth-of-type(9) {
       top: 22px;
       left: 48px;
       transform: rotate(-15deg);
     }
 
-    &:nth-child(10) {
+    &:nth-of-type(10) {
       top: 30px;
       left: -3px;
       transform: rotate(-85deg);
     }
 
-    &:nth-child(11) {
+    &:nth-of-type(11) {
       top: 45px;
       left: 35px;
       transform: rotate(25deg);
@@ -270,21 +270,21 @@ export const StyledCandyBowl = styled(StyledComponent)`
       opacity: 0.7;
     }
 
-    &:nth-child(14) {
+    &:nth-of-type(14) {
       top: 50px;
       left: 40px;
       transform: rotate(-45deg);
       z-index: 2;
     }
 
-    &:nth-child(15) {
+    &:nth-of-type(15) {
       top: 30px;
       left: -3px;
       transform: rotate(-85deg);
       z-index: 13;
     }
 
-    &:nth-child(16) {
+    &:nth-of-type(16) {
       top: 43px;
       left: 22px;
       transform: rotate(25deg);

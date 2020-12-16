@@ -72,7 +72,7 @@ export const StyledSkull = styled(StyledComponent)`
       animation: ${eyes} 15s linear infinite;
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       left: auto;
       right: 15%;
       transform: rotate(-20deg);
@@ -116,17 +116,17 @@ export const StyledSkull = styled(StyledComponent)`
       height: 100%;
       right: 0;
     }
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       left: 14px;
     }
-    &:nth-child(2):after {
+    &:nth-of-type(2):after {
       width: 50%;
       background-color: rgba(20, 1, 30, 0.15);
     }
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       left: 28px;
     }
-    &:nth-child(3):after {
+    &:nth-of-type(3):after {
       width: 100%;
       background-color: rgba(20, 1, 30, 0.15);
     }

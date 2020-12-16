@@ -54,95 +54,6 @@ export const ShelfHooks = styled.div`
   }
 `;
 
-export const StyledShelf = styled(StyledComponent)`
-  width: 220px;
-  height: 20px;
-  top: 0;
-  right: 0;
-  z-index: 2;
-`;
-
-const ShelfComponent = styled(StyledComponent)`
-  width: 220px;
-  height: 20px;
-  top: 220px;
-  right: 50px;
-  z-index: 3;
-`;
-
-export const ShelfTop = styled(ShelfComponent)`
-  ${StyledShelf} {
-    &::after {
-      width: 30%;
-      height: 100%;
-      background-color: #8f65a9;
-      border-radius: 0 50px 0 0;
-      bottom: 0;
-      opacity: 0.1;
-      z-index: 3;
-    }
-    &::before {
-      width: 90%;
-      height: 100%;
-      background-color: #8f65a9;
-      border-radius: 0 100px 0 0;
-      bottom: 0;
-      opacity: 0.1;
-      z-index: 2;
-    }
-  }
-`;
-
-export const ShelfMiddle = styled(ShelfComponent)`
-  top: 340px;
-
-  ${StyledShelf} {
-    &::after {
-      width: 15%;
-      height: 100%;
-      background-color: #8f65a9;
-      border-radius: 0 100% 0 0;
-      bottom: 0;
-      opacity: 0.4;
-      z-index: 3;
-    }
-    &::before {
-      width: 70%;
-      height: 100%;
-      background-color: #8f65a9;
-      border-radius: 0 40px 0 0;
-      bottom: 0;
-      z-index: 2;
-      opacity: 0.2;
-    }
-  }
-`;
-
-export const ShelfBottom = styled(ShelfComponent)`
-  top: 460px;
-  ${StyledShelf} {
-    &::after {
-      width: 27%;
-      height: 100%;
-      background-color: #8f65a9;
-      border-radius: 0 5px 0 0;
-      bottom: 0;
-      opacity: 0.4;
-      z-index: 3;
-    }
-
-    &::before {
-      width: 80%;
-      height: 100%;
-      background-color: #8f65a9;
-      border-radius: 0 5px 0 0;
-      bottom: 0;
-      opacity: 0.2;
-      z-index: 2;
-    }
-  }
-`;
-
 const ShadowStyle = css`
   background-color: #501e70;
   z-index: 1;
@@ -227,8 +138,99 @@ const ShadowStyle = css`
   }
 `;
 
+export const StyledShelf = styled(StyledComponent)`
+  width: 220px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  ${({ shadow }) => shadow && ShadowStyle}
+`;
+
+const ShelfComponent = styled(StyledComponent)`
+  width: 220px;
+  height: 20px;
+  top: 220px;
+  right: 50px;
+  z-index: 3;
+`;
+
+export const ShelfTop = styled(ShelfComponent)`
+  ${StyledShelf} {
+    &::after {
+      width: 30%;
+      height: 100%;
+      background-color: #8f65a9;
+      border-radius: 0 50px 0 0;
+      bottom: 0;
+      opacity: 0.1;
+      z-index: 3;
+    }
+    &::before {
+      width: 90%;
+      height: 100%;
+      background-color: #8f65a9;
+      border-radius: 0 100px 0 0;
+      bottom: 0;
+      opacity: 0.1;
+      z-index: 2;
+    }
+  }
+`;
+
+export const ShelfMiddle = styled(ShelfComponent)`
+  top: 340px;
+
+  ${StyledShelf} {
+    &::after {
+      width: 15%;
+      height: 100%;
+      background-color: #8f65a9;
+      border-radius: 0 100% 0 0;
+      bottom: 0;
+      opacity: 0.4;
+      z-index: 3;
+    }
+    &::before {
+      width: 70%;
+      height: 100%;
+      background-color: #8f65a9;
+      border-radius: 0 40px 0 0;
+      bottom: 0;
+      z-index: 2;
+      opacity: 0.2;
+    }
+  }
+`;
+
+export const ShelfBottom = styled(ShelfComponent)`
+  top: 460px;
+  ${StyledShelf} {
+    &::after {
+      width: 27%;
+      height: 100%;
+      background-color: #8f65a9;
+      border-radius: 0 5px 0 0;
+      bottom: 0;
+      opacity: 0.4;
+      z-index: 3;
+    }
+
+    &::before {
+      width: 80%;
+      height: 100%;
+      background-color: #8f65a9;
+      border-radius: 0 5px 0 0;
+      bottom: 0;
+      opacity: 0.2;
+      z-index: 2;
+    }
+  }
+`;
+
 const Shelf = ({ shadow, children, ...props }) => (
-  <StyledShelf styles={shadow && ShadowStyle} {...props}>
+  <StyledShelf shadow={shadow} {...props}>
     <ShelfHooks />
     <ShelfBracket />
     {children}

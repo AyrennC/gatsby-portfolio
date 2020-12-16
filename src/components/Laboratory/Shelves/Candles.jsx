@@ -136,17 +136,17 @@ export const StyledCandle = styled(StyledComponent)`
     }
   }
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     left: 50px;
     height: 40px;
     bottom: 10px;
   }
 
-  &:nth-child(2):before {
+  &:nth-of-type(2):before {
     bottom: 50px;
   }
 
-  &:nth-child(2) .flame {
+  &:nth-of-type(2) .flame {
     bottom: 140%;
     animation-delay: 0.15s;
   }

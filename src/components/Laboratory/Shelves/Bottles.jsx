@@ -51,28 +51,28 @@ export const Bottle = styled(StyledComponent)`
     z-index: 2;
   }
 
-  .liquid .bottle-bubble:nth-child(2) {
+  .liquid .bottle-bubble:nth-of-type(2) {
     top: 3px;
     left: 10px;
     width: 7px;
     height: 7px;
   }
 
-  .liquid .bottle-bubble:nth-child(3) {
+  .liquid .bottle-bubble:nth-of-type(3) {
     top: 6px;
     left: 25px;
     width: 5px;
     height: 5px;
   }
 
-  .liquid .bottle-bubble:nth-child(4) {
+  .liquid .bottle-bubble:nth-of-type(4) {
     top: 17px;
     left: 30px;
     width: 5px;
     height: 5px;
   }
 
-  .liquid .bottle-bubble:nth-child(5) {
+  .liquid .bottle-bubble:nth-of-type(5) {
     top: -4px;
     left: 30px;
     width: 8px;

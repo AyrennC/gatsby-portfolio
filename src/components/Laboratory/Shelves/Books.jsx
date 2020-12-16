@@ -36,24 +36,24 @@ export const Book = styled(StyledComponent)`
     box-shadow: 20px 4px rgba(219, 77, 39, 0.3);
   }
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     transform: scaleX(-1);
     bottom: 25px;
     left: 10px;
     z-index: 2;
   }
 
-  &:nth-child(2):after {
+  &:nth-of-type(2):after {
     border-color: #ee8228;
   }
 
-  &:nth-child(3) {
+  &:nth-of-type(3) {
     bottom: 49px;
     left: 5px;
     z-index: 2;
   }
 
-  &:nth-child(3):after {
+  &:nth-of-type(3):after {
     border-color: #3ebcbc;
   }
 `;

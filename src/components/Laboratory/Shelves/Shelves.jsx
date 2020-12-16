@@ -24,6 +24,7 @@ const Shelves = (props) => (
         <BottleRight />
       </Shelf>
     </ShelfTop>
+
     <ShelfMiddle>
       <Shelf shadow>
         <Skull shadow />
@@ -34,6 +35,7 @@ const Shelves = (props) => (
         <Candles />
       </Shelf>
     </ShelfMiddle>
+
     <ShelfBottom>
       <Shelf shadow>
         <Books shadow />
