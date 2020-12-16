@@ -34,13 +34,17 @@ const BroomStick = styled(StyledComponent)`
   }
 `;
 
-const BroomStickShadow = styled(StyledComponent)`
+const DynamicBroomStickDynamicShadowStyle = ({ theme: { colors } }) => css`
   width: 40px;
   height: 100%;
-  background-color: #3a0956;
+  background-color: ${colors.primary.dark};
   right: 0;
   border-radius: 0 10px 10px 0;
   opacity: 0.3;
+`;
+
+const BroomStickShadow = styled(StyledComponent)`
+  ${DynamicBroomStickDynamicShadowStyle}
 `;
 
 const BroomHair = styled(StyledComponent)`
@@ -121,18 +125,18 @@ const BroomHairBand = styled(StyledComponent)`
   z-index: 3;
 `;
 
-const BroomHook = styled(StyledComponent)`
+const DynamicBroomHookStyle = ({ theme: { colors } }) => css`
   width: 14px;
   height: 30px;
   border-radius: 10px;
-  background-color: #3a0956;
+  background-color: ${colors.primary.dark};
   right: 40px;
   top: 40px;
 
   &::after {
     width: 100%;
     height: 20px;
-    background-color: #6f3990;
+    background-color: ${colors.primary.medium};
     border-radius: 14px;
     bottom: 0;
     opacity: 0.9;
@@ -142,6 +146,10 @@ const BroomHook = styled(StyledComponent)`
     right: 210px;
     top: 36px;
   }
+`;
+
+const BroomHook = styled(StyledComponent)`
+  ${DynamicBroomHookStyle}
 `;
 
 const BroomLines = styled(StyledComponent)`
@@ -172,13 +180,13 @@ const BroomLines = styled(StyledComponent)`
   }
 `;
 
-const BroomDetails = styled(StyledComponent)`
+const DynamicBroomDetailsStyle = ({ theme: { colors } }) => css`
   clip-path: polygon(0 55%, 0% 100%, 100% 42%);
   left: -50px;
   width: 30px;
   height: 20px;
   bottom: 53px;
-  background-color: #410b61;
+  background-color: ${colors.shadow.dark};
 
   &:nth-of-type(7) {
     top: -15px;
@@ -188,7 +196,11 @@ const BroomDetails = styled(StyledComponent)`
   }
 `;
 
-const ShadowStyle = css`
+const BroomDetails = styled(StyledComponent)`
+  ${DynamicBroomDetailsStyle}
+`;
+
+const DynamicShadowStyle = ({ theme: { colors } }) => css`
   background-color: transparent !important;
   transform: scale(1.1, 1.1) translatey(-15px);
 
@@ -196,14 +208,14 @@ const ShadowStyle = css`
   *:after,
   *:before,
   * > * {
-    background-color: #410b61 !important;
+    background-color: ${colors.shadow.dark} !important;
     box-shadow: none !important;
   }
 
   ${BroomStick},
   ${BroomStick}::after,
   ${BroomStick}::before {
-    background: #410b61 !important;
+    background: ${colors.shadow.dark} !important;
   }
 
   ${BroomHair},
@@ -219,7 +231,7 @@ const BroomContainer = styled(StyledComponent)`
   top: 40px;
   z-index: 2;
 
-  ${({ shadow }) => shadow && ShadowStyle};
+  ${({ shadow }) => shadow && DynamicShadowStyle};
 `;
 
 const StyledBroom = ({ shadow, ...props }) => (

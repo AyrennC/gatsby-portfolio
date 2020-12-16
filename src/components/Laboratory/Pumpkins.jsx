@@ -46,7 +46,7 @@ const PumpkinTop = styled(StyledComponent)`
   width: 30px;
   height: 30px;
   border: 10px solid #329399;
-  border-radius: 0px 50px 0 0;
+  border-radius: 0 50px 0 0;
   border-bottom: 0;
   border-left: 0;
   z-index: -1;
@@ -54,7 +54,7 @@ const PumpkinTop = styled(StyledComponent)`
   left: 25px;
 `;
 
-const ShadowStyle = css`
+const DynamicShadowStyle = ({ theme: { colors } }) => css`
   background-color: transparent !important;
   transform: scale(1.05, 1.1) translateY(-5px);
 
@@ -62,13 +62,13 @@ const ShadowStyle = css`
   *:after,
   *:before,
   * > * {
-    background-color: #410b61 !important;
+    background-color: ${colors.shadow.dark} !important;
     box-shadow: none !important;
   }
 
   ${PumpkinTop} {
     background-color: transparent !important;
-    border-color: #410b61;
+    border-color: ${colors.shadow.dark};
   }
 `;
 
@@ -78,7 +78,7 @@ const PumpkinContainer = styled(StyledComponent)`
   height: 100px;
   width: 100%;
 
-  ${({ shadow }) => shadow && ShadowStyle};
+  ${({ shadow }) => shadow && DynamicShadowStyle};
 `;
 
 const StyledPumpkins = (props) => (

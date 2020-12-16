@@ -7,33 +7,37 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import { jsx } from 'theme-ui';
 
-const Window = styled(StyledComponent)`
+const DynamicWindowStyle = ({ theme: { colors } }) => css`
   width: 100%;
   height: 100%;
-  border: 10px solid #310849;
-  background-color: #3a0956;
+  border: 10px solid ${colors.primary.extraDark};
+  background-color: ${colors.primary.dark};
   border-radius: 3px;
 
   &::after {
     top: 100%;
     width: 120%;
     height: 16px;
-    background-color: #310849;
+    background-color: ${colors.primary.extraDark};
     left: -10%;
     border-radius: 3px;
   }
   &::before {
     width: 100%;
     height: 14px;
-    background-color: #310849;
+    background-color: ${colors.primary.extraDark};
     top: 40%;
     z-index: 3;
-    box-shadow: 0 -5px #8f65a9;
+    box-shadow: 0 -5px ${colors.primary.light};
   }
 `;
 
-const Reflections = styled(StyledComponent)`
-  background-color: #8f65a9;
+const Window = styled(StyledComponent)`
+  ${DynamicWindowStyle}
+`;
+
+const DynamicReflectionsStyle = ({ theme: { colors } }) => css`
+  background-color: ${colors.primary.light};
   bottom: -16px;
   right: -18px;
   width: 50px;
@@ -43,7 +47,7 @@ const Reflections = styled(StyledComponent)`
   opacity: 0.4;
 
   &::before {
-    background-color: #8f65a9;
+    background-color: ${colors.primary.light};
     right: 0;
     width: 155px;
     height: 16px;
@@ -69,7 +73,7 @@ const Reflections = styled(StyledComponent)`
   }
 
   &:nth-of-type(3) {
-    background-color: #8f65a9;
+    background-color: ${colors.primary.light};
     bottom: 124px;
     right: 0;
     width: 130px;
@@ -85,20 +89,28 @@ const Reflections = styled(StyledComponent)`
   }
 `;
 
-const WindowIn = styled(StyledComponent)`
+const Reflections = styled(StyledComponent)`
+  ${DynamicReflectionsStyle}
+`;
+
+const DynamicWindowInStyle = ({ theme: { colors } }) => css`
   width: 100%;
   height: 100%;
-  border: 6px solid #8f65a9;
+  border: 6px solid ${colors.primary.light};
   border-top: 0;
   overflow: hidden;
 `;
 
-const ShadowStyle = css`
+const WindowIn = styled(StyledComponent)`
+  ${DynamicWindowInStyle}
+`;
+
+const DynamicShadowStyle = ({ theme: { colors } }) => css`
   background-color: transparent !important;
   transform: scale(1.1, 1.1) translate(-8px, -5px);
 
   ${Window} {
-    background-color: #410b61 !important;
+    background-color: ${colors.shadow.dark} !important;
     border-color: transparent !important;
 
     &::before {
@@ -106,7 +118,7 @@ const ShadowStyle = css`
     }
 
     &::after {
-      background-color: #410b61 !important;
+      background-color: ${colors.shadow.dark} !important;
     }
   }
 `;
@@ -120,7 +132,7 @@ const WindowContainer = styled(StyledComponent)`
   transform-origin: bottom center;
   z-index: 2;
 
-  ${({ shadow }) => shadow && ShadowStyle};
+  ${({ shadow }) => shadow && DynamicShadowStyle};
 `;
 
 const HungWindow = (props) => (

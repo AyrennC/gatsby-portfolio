@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import StyledComponent from '../StyledComponent';
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import * as R from 'ramda';
 import { jsx } from 'theme-ui';
@@ -18,9 +18,9 @@ const StyledStars = styled(StyledComponent)`
   left: 20px;
 `;
 
-const Star = styled(StyledComponent)`
+const DynamicStarStyle = ({ theme: { colors } }) => css`
   border-radius: 50%;
-  background-color: #feffff;
+  background-color: ${colors.grey.white};
   animation: ${twinkle} 5s linear infinite;
   width: 3px;
   height: 3px;
@@ -59,6 +59,10 @@ const Star = styled(StyledComponent)`
     height: 3px;
     animation-delay: 4s;
   }
+`;
+
+const Star = styled(StyledComponent)`
+  ${DynamicStarStyle}
 `;
 
 const Stars = (props) => (

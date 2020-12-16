@@ -1,14 +1,15 @@
 /** @jsx jsx */
 import StyledComponent from '../StyledComponent';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { jsx } from 'theme-ui';
 
-export const Book = styled(StyledComponent)`
+const DynamicBookStyle = ({ theme: { colors } }) => css`
   height: 24px;
   width: 60px;
-  background-color: #faf1c5;
+  background-color: ${colors.grey.offWhite};
   bottom: 2px;
   border-radius: 8px 0 0 8px;
 
@@ -17,7 +18,7 @@ export const Book = styled(StyledComponent)`
     width: 94%;
     bottom: 5px;
     left: 4px;
-    background-color: #d5cda8;
+    background-color: ${colors.grey.offWhiteDark};
   }
 
   &::after {
@@ -59,13 +60,17 @@ export const Book = styled(StyledComponent)`
   }
 `;
 
-export const BookUp = styled(StyledComponent)`
+export const Book = styled(StyledComponent)`
+  ${DynamicBookStyle}
+`;
+
+const DynamicBookUpStyle = ({ theme: { colors } }) => css`
   z-index: 5;
   width: 26px;
   height: 84px;
   left: 73px;
   border-radius: 2px;
-  background-color: #500d78;
+  background-color: ${colors.primary.regular};
   bottom: 3px;
   transform: rotate(-15deg);
 
@@ -93,6 +98,10 @@ export const BookUp = styled(StyledComponent)`
       left: 11px;
     }
   }
+`;
+
+export const BookUp = styled(StyledComponent)`
+  ${DynamicBookUpStyle}
 `;
 
 export const StyledBooks = styled(StyledComponent)`

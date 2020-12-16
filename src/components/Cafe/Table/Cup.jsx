@@ -146,7 +146,7 @@ const TeabagCord = styled.div`
   border: 6px solid #fff5e6;
   border-top-left-radius: 29px;
   border-top-right-radius: 29px;
-  clip: rect(0px 44px 41px 0px);
+  clip: rect(0px 44px 41px 0);
 `;
 
 const TeabagCordBeginningAndEnd = styled.div`

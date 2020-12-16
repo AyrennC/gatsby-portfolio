@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import StyledComponent from '../StyledComponent';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { jsx } from 'theme-ui';
 
-export const StyledCandyBowl = styled(StyledComponent)`
+const DynamicCandyBowlStyle = ({ theme: { colors } }) => css`
   width: 75px;
   height: 75px;
   right: 17px;
@@ -51,7 +52,7 @@ export const StyledCandyBowl = styled(StyledComponent)`
     overflow: hidden;
 
     &::after {
-      background-color: #3a0956;
+      background-color: ${colors.primary.dark};
       width: 50%;
       height: 100%;
       right: 0;
@@ -64,7 +65,7 @@ export const StyledCandyBowl = styled(StyledComponent)`
   .candy-bowl-reflection {
     opacity: 0.7;
     border-radius: 0 0 0 50px;
-    border: 6px solid #feffff;
+    border: 6px solid ${colors.grey.white};
     border-top: 0;
     border-right: 0;
     width: 30px;
@@ -77,10 +78,10 @@ export const StyledCandyBowl = styled(StyledComponent)`
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: #feffff;
+      background-color: ${colors.grey.white};
       bottom: 20px;
       left: -6px;
-      box-shadow: 27px 26px #feffff;
+      box-shadow: 27px 26px ${colors.grey.white};
     }
   }
 
@@ -94,19 +95,19 @@ export const StyledCandyBowl = styled(StyledComponent)`
     background: conic-gradient(
       #ed42e4 0,
       #ed42e4 12.5%,
-      #500d78 0 25%,
+      ${colors.primary.regular} 0 25%,
       #ed42e4 25%,
       #ed42e4 37.5%,
-      #500d78 37.5%,
-      #500d78 50%,
+      ${colors.primary.regular} 37.5%,
+      ${colors.primary.regular} 50%,
       #ed42e4 50%,
       #ed42e4 62.5%,
-      #500d78 62.5%,
-      #500d78 75%,
+      ${colors.primary.regular} 62.5%,
+      ${colors.primary.regular} 75%,
       #ed42e4 75%,
       #ed42e4 87.5%,
-      #500d78 87.5%,
-      #500d78 100%
+      ${colors.primary.regular} 87.5%,
+      ${colors.primary.regular} 100%
     );
     transform: rotate(-25deg);
     z-index: 1;
@@ -114,7 +115,7 @@ export const StyledCandyBowl = styled(StyledComponent)`
     &::after {
       opacity: 0.6;
       border-radius: 0 0 0 50px;
-      border: 3px solid #feffff;
+      border: 3px solid ${colors.grey.white};
       border-top: 0;
       border-right: 0;
       width: 8px;
@@ -156,7 +157,7 @@ export const StyledCandyBowl = styled(StyledComponent)`
     transform: rotateY(-35deg);
 
     .candy-reflection {
-      background-color: #feffff;
+      background-color: ${colors.grey.white};
       width: 60%;
       height: 60%;
       border-radius: 50%;
@@ -192,8 +193,8 @@ export const StyledCandyBowl = styled(StyledComponent)`
     overflow: hidden;
     background-image: repeating-linear-gradient(
       -40deg,
-      #feffff,
-      #feffff 3px,
+      ${colors.grey.white},
+      ${colors.grey.white} 3px,
       #3ebcbc 3px,
       #3ebcbc 6px
     );
@@ -235,12 +236,12 @@ export const StyledCandyBowl = styled(StyledComponent)`
     border-radius: 3px;
     left: 20px;
     top: 5px;
-    background-color: #3a0956;
+    background-color: ${colors.primary.dark};
     transform: rotate(5deg);
     z-index: 1;
 
     &::after {
-      background-color: #3a0956;
+      background-color: ${colors.primary.dark};
       width: 50%;
       height: 60%;
       left: 70%;
@@ -250,7 +251,7 @@ export const StyledCandyBowl = styled(StyledComponent)`
     }
 
     &::before {
-      background-color: #3a0956;
+      background-color: ${colors.primary.dark};
       width: 50%;
       height: 60%;
       right: 70%;
@@ -260,7 +261,7 @@ export const StyledCandyBowl = styled(StyledComponent)`
     }
 
     .candy-reflection {
-      background-color: #8f65a9;
+      background-color: ${colors.primary.light};
       width: 80%;
       height: 4px;
       border-radius: 2px;
@@ -291,6 +292,10 @@ export const StyledCandyBowl = styled(StyledComponent)`
       z-index: 2;
     }
   }
+`;
+
+export const StyledCandyBowl = styled(StyledComponent)`
+  ${DynamicCandyBowlStyle};
 `;
 
 const CandyBowl = ({ shadow, ...props }) => (

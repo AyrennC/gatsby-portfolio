@@ -16,22 +16,39 @@ import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
 
-export const ShelfBracket = styled.div`
+const DynamicShelfBracketStyle = ({ theme: { colors } }) => css`
   width: 100%;
   height: 100%;
   border-radius: 2px;
-  background-color: #3a0956;
+  background-color: ${colors.primary.dark};
+`;
+
+export const ShelfBracket = styled.div`
+  ${DynamicShelfBracketStyle}
+`;
+
+const DynamicShelfHooksStyle = ({ theme: { colors } }) => css`
+  background-color: ${colors.primary.shadow};
+  background: linear-gradient(
+    to right,
+    ${colors.primary.dark} 0%,
+    ${colors.primary.dark} 50%,
+    ${colors.primary.shadow} 50%,
+    ${colors.primary.shadow} 100%
+  );
+
+  &::after {
+    background: linear-gradient(
+      to right,
+      ${colors.primary.regular} 0%,
+      ${colors.primary.regular} 50%,
+      ${colors.primary.shadow} 50%,
+      ${colors.primary.shadow} 100%
+    );
+  }
 `;
 
 export const ShelfHooks = styled.div`
-  background-color: #1c0526;
-  background: linear-gradient(
-    to right,
-    #3a0956 0%,
-    #3a0956 50%,
-    #1c0526 50%,
-    #1c0526 100%
-  );
   right: 15px;
   height: 20px;
   width: 14px;
@@ -43,32 +60,31 @@ export const ShelfHooks = styled.div`
     width: 100%;
     height: 100%;
     right: 176px;
-    background: linear-gradient(
-      to right,
-      #500d78 0%,
-      #500d78 50%,
-      #1c0526 50%,
-      #1c0526 100%
-    );
     border-radius: 0 0 5px 5px;
   }
+
+  ${DynamicShelfHooksStyle};
 `;
 
-const ShadowStyle = css`
-  background-color: #501e70;
+const DynamicShadowStyle = ({ theme: { colors } }) => css`
+  background-color: ${colors.shadow.medium};
   z-index: 1;
 
   *,
   *::after,
   *::before,
   * > * {
-    background-color: #501e70 !important;
-    background: #501e70 !important;
+    background-color: ${colors.shadow.medium} !important;
+    background: ${colors.shadow.medium} !important;
     box-shadow: none;
   }
 
   ${ShelfBracket} {
-    background: linear-gradient(to right, #501e70 0%, #410b61 100%);
+    background: linear-gradient(
+      to right,
+      ${colors.shadow.medium} 0%,
+      ${colors.shadow.dark} 100%
+    );
     transform: scale(1.03, 1.1) translate(6px, -2px);
   }
 
@@ -111,12 +127,12 @@ const ShadowStyle = css`
   .stand:after,
   .flame-in,
   .flame-in:before {
-    background-color: #410b61 !important;
-    background: #410b61;
+    background-color: ${colors.shadow.dark} !important;
+    background: ${colors.shadow.dark};
   }
 
   ${StyledCandyBowl} {
-    background-color: #410b61;
+    background-color: ${colors.shadow.dark};
   }
 
   &::before {
@@ -145,7 +161,7 @@ export const StyledShelf = styled(StyledComponent)`
   right: 0;
   z-index: 2;
 
-  ${({ shadow }) => shadow && ShadowStyle}
+  ${({ shadow }) => shadow && DynamicShadowStyle}
 `;
 
 const ShelfComponent = styled(StyledComponent)`
@@ -156,12 +172,12 @@ const ShelfComponent = styled(StyledComponent)`
   z-index: 3;
 `;
 
-export const ShelfTop = styled(ShelfComponent)`
+const DynamicShelfTopStyle = ({ theme: { colors } }) => css`
   ${StyledShelf} {
     &::after {
       width: 30%;
       height: 100%;
-      background-color: #8f65a9;
+      background-color: ${colors.primary.light};
       border-radius: 0 50px 0 0;
       bottom: 0;
       opacity: 0.1;
@@ -170,7 +186,7 @@ export const ShelfTop = styled(ShelfComponent)`
     &::before {
       width: 90%;
       height: 100%;
-      background-color: #8f65a9;
+      background-color: ${colors.primary.light};
       border-radius: 0 100px 0 0;
       bottom: 0;
       opacity: 0.1;
@@ -179,14 +195,18 @@ export const ShelfTop = styled(ShelfComponent)`
   }
 `;
 
-export const ShelfMiddle = styled(ShelfComponent)`
+export const ShelfTop = styled(ShelfComponent)`
+  ${DynamicShelfTopStyle}
+`;
+
+const DynamicShelfMiddleStyle = ({ theme: { colors } }) => css`
   top: 340px;
 
   ${StyledShelf} {
     &::after {
       width: 15%;
       height: 100%;
-      background-color: #8f65a9;
+      background-color: ${colors.primary.light};
       border-radius: 0 100% 0 0;
       bottom: 0;
       opacity: 0.4;
@@ -195,7 +215,7 @@ export const ShelfMiddle = styled(ShelfComponent)`
     &::before {
       width: 70%;
       height: 100%;
-      background-color: #8f65a9;
+      background-color: ${colors.primary.light};
       border-radius: 0 40px 0 0;
       bottom: 0;
       z-index: 2;
@@ -204,13 +224,17 @@ export const ShelfMiddle = styled(ShelfComponent)`
   }
 `;
 
-export const ShelfBottom = styled(ShelfComponent)`
+export const ShelfMiddle = styled(ShelfComponent)`
+  ${DynamicShelfMiddleStyle}
+`;
+
+const DynamicShelfBottomStyle = ({ theme: { colors } }) => css`
   top: 460px;
   ${StyledShelf} {
     &::after {
       width: 27%;
       height: 100%;
-      background-color: #8f65a9;
+      background-color: ${colors.primary.light};
       border-radius: 0 5px 0 0;
       bottom: 0;
       opacity: 0.4;
@@ -220,13 +244,17 @@ export const ShelfBottom = styled(ShelfComponent)`
     &::before {
       width: 80%;
       height: 100%;
-      background-color: #8f65a9;
+      background-color: ${colors.primary.light};
       border-radius: 0 5px 0 0;
       bottom: 0;
       opacity: 0.2;
       z-index: 2;
     }
   }
+`;
+
+export const ShelfBottom = styled(ShelfComponent)`
+  ${DynamicShelfBottomStyle}
 `;
 
 const Shelf = ({ shadow, children, ...props }) => (

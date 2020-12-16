@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import StyledComponent from '../StyledComponent';
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -13,7 +13,7 @@ const eyes = keyframes`
   }
 `;
 
-export const StyledSkull = styled(StyledComponent)`
+const DynamicSkullStyle = ({ theme: { colors } }) => css`
   width: 60px;
   height: 60px;
   bottom: 100%;
@@ -22,7 +22,7 @@ export const StyledSkull = styled(StyledComponent)`
     width: 100%;
     height: 100%;
     border-radius: 30px 30px 18px 18px;
-    background-color: #feffff;
+    background-color: ${colors.grey.white};
     overflow: hidden;
 
     &::before {
@@ -55,7 +55,7 @@ export const StyledSkull = styled(StyledComponent)`
   .eye {
     left: 15%;
     top: 37%;
-    background-color: #14011e;
+    background-color: ${colors.grey.black};
     width: 17px;
     height: 24px;
     border-radius: 20px;
@@ -82,15 +82,15 @@ export const StyledSkull = styled(StyledComponent)`
   .nose {
     top: 76%;
     left: 40%;
-    background-color: #14011e;
+    background-color: ${colors.grey.black};
     width: 5px;
     height: 10px;
     border-radius: 10px;
-    box-shadow: 7px 0 #14011e;
+    box-shadow: 7px 0 ${colors.grey.black};
   }
 
   .teeth {
-    background-color: #feffff;
+    background-color: ${colors.grey.white};
     width: 60%;
     height: 10px;
     top: 92%;
@@ -109,7 +109,7 @@ export const StyledSkull = styled(StyledComponent)`
     top: 50%;
     width: 8px;
     height: 10px;
-    background-color: #feffff;
+    background-color: ${colors.grey.white};
     border-radius: 2px;
 
     &::after {
@@ -131,6 +131,10 @@ export const StyledSkull = styled(StyledComponent)`
       background-color: rgba(20, 1, 30, 0.15);
     }
   }
+`;
+
+export const StyledSkull = styled(StyledComponent)`
+  ${DynamicSkullStyle}
 `;
 
 const Skull = ({ shadow, ...props }) => (

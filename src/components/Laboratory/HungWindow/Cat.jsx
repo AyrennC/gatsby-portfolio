@@ -51,23 +51,23 @@ const tail = keyframes`
   }
 `;
 
-const HighlightStyle = css`
+const HighlightStyle = ({ theme: { colors } }) => css`
   transform: translate(-1px, -2px) scale(0.92);
   transform-origin: bottom center;
 
   * {
-    background-color: #8f65a9 !important;
+    background-color: ${colors.primary.light} !important;
   }
 
   .neck {
-    background-color: #8f65a9 !important;
+    background-color: ${colors.primary.light} !important;
   }
 
   .ear {
     background-color: transparent !important;
 
     .ear-in {
-      background-color: #8f65a9 !important;
+      background-color: ${colors.primary.light} !important;
     }
   }
 `;
@@ -84,8 +84,8 @@ const StyledCat = styled(StyledComponent)`
   ${({ highlight }) => highlight && HighlightStyle};
 `;
 
-const StyledCatTail = styled(StyledComponent)`
-  background-color: #1c0526;
+const DynamicCatTailStyle = ({ theme: { colors } }) => css`
+  background-color: ${colors.primary.shadow};
   height: 40px;
   width: 13px;
   border-radius: 50px;
@@ -94,10 +94,10 @@ const StyledCatTail = styled(StyledComponent)`
 
   .tail {
     bottom: 2px;
-    background-color: #1c0526;
+    background-color: ${colors.primary.shadow};
     height: 12px;
     width: 13px;
-    border-radius: 20px 20px 0 0px;
+    border-radius: 20px 20px 0 0;
     z-index: 1;
     animation: ${tail} 15s ease infinite;
     transform: rotate(13deg);
@@ -115,12 +115,12 @@ const StyledCatTail = styled(StyledComponent)`
   ${({ shadow }) =>
     shadow &&
     css`
-      transform: scale(1.15, 1.1) translate(-8px, 0px);
-      background-color: #501e70;
+      transform: scale(1.15, 1.1) translate(-8px, 0);
+      background-color: ${colors.shadow.medium};
       z-index: -1;
 
       .tail {
-        background-color: #501e70;
+        background-color: ${colors.shadow.medium};
       }
     `}
 
@@ -137,19 +137,27 @@ const StyledCatTail = styled(StyledComponent)`
     `}
 `;
 
-const CatBody = styled(StyledComponent)`
+const StyledCatTail = styled(StyledComponent)`
+  ${DynamicCatTailStyle}
+`;
+
+const DynamicCatBodyStyle = ({ theme: { colors } }) => css`
   width: 70px;
   height: 80px;
-  background-color: #1c0526;
+  background-color: ${colors.primary.shadow};
   bottom: 0;
   right: 0;
   border-radius: 0 50% 20% 0;
   transform-origin: bottom center;
 `;
 
-const CatPaw = styled(StyledComponent)`
+const CatBody = styled(StyledComponent)`
+  ${DynamicCatBodyStyle}
+`;
+
+const DynamicCatPawStyle = ({ theme: { colors } }) => css`
   bottom: 0;
-  background-color: #1c0526;
+  background-color: ${colors.primary.shadow};
   width: 30px;
   height: 11px;
   border-radius: 50px;
@@ -158,25 +166,29 @@ const CatPaw = styled(StyledComponent)`
   &::after {
     height: 60px;
     width: 10px;
-    background-color: #3a0956;
+    background-color: ${colors.primary.dark};
     border-radius: 4px;
-    left: 0px;
+    left: 0;
     bottom: 12px;
-    box-shadow: 1px 0 #8f65a9;
+    box-shadow: 1px 0 ${colors.primary.light};
   }
 `;
 
-const StyledCatNeck = styled(StyledComponent)`
+const CatPaw = styled(StyledComponent)`
+  ${DynamicCatPawStyle}
+`;
+
+const DynamicCatNeckStyle = ({ theme: { colors } }) => css`
   bottom: 80px;
   right: 44px;
   transform: rotate(-13deg);
 
   .neck {
     bottom: 2px;
-    background-color: #1c0526;
+    background-color: ${colors.primary.shadow};
     height: 12px;
     width: 15px;
-    border-radius: 0 0px 20px 20px;
+    border-radius: 0 0 20px 20px;
     z-index: 1;
     transform: rotate(-5deg);
     transform-origin: center center;
@@ -187,10 +199,14 @@ const StyledCatNeck = styled(StyledComponent)`
   }
 `;
 
-const StyledCatHead = styled(StyledComponent)`
+const StyledCatNeck = styled(StyledComponent)`
+  ${DynamicCatNeckStyle}
+`;
+
+const DynamicCatHeadStyle = ({ theme: { colors } }) => css`
   width: 50px;
   height: 40px;
-  background-color: #1c0526;
+  background-color: ${colors.primary.shadow};
   border-radius: 18px;
   bottom: 70px;
   left: 18px;
@@ -207,7 +223,7 @@ const StyledCatHead = styled(StyledComponent)`
     .ear-in {
       width: 100%;
       height: 100%;
-      background-color: #1c0526;
+      background-color: ${colors.primary.shadow};
       transform: skew(35deg);
       border-radius: 5px;
       overflow: hidden;
@@ -220,6 +236,10 @@ const StyledCatHead = styled(StyledComponent)`
       animation: ${earRight} 15s ease infinite;
     }
   }
+`;
+
+const StyledCatHead = styled(StyledComponent)`
+  ${DynamicCatHeadStyle}
 `;
 
 const CatNeck = (props) => (

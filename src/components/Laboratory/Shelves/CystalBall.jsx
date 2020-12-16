@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import StyledComponent from '../StyledComponent';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
 
-export const StyledCrystalBall = styled(StyledComponent)`
+const DynamicCrystalBallStyle = ({ theme: { colors } }) => css`
   left: 10px;
   bottom: 20px;
   width: 60px;
@@ -61,7 +62,7 @@ export const StyledCrystalBall = styled(StyledComponent)`
     .ball-highlight {
       opacity: 0.5;
       border-radius: 0 0 0 50px;
-      border: 6px solid #feffff;
+      border: 6px solid ${colors.grey.white};
       border-top: 0;
       border-right: 0;
       width: 18px;
@@ -74,13 +75,17 @@ export const StyledCrystalBall = styled(StyledComponent)`
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background-color: #feffff;
+        background-color: ${colors.grey.white};
         bottom: 10px;
         left: -6px;
-        box-shadow: 15px 16px #feffff;
+        box-shadow: 15px 16px ${colors.grey.white};
       }
     }
   }
+`;
+
+export const StyledCrystalBall = styled(StyledComponent)`
+  ${DynamicCrystalBallStyle}
 `;
 
 const CrystalBall = ({ shadow, ...props }) => (

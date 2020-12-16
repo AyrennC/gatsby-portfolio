@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import StyledComponent from '../StyledComponent';
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
 
-export const Bottle = styled(StyledComponent)`
+const DynamicBottleStyle = ({ theme: { colors } }) => css`
   transform-origin: bottom center;
 
   .bowl {
@@ -34,11 +34,11 @@ export const Bottle = styled(StyledComponent)`
     width: 100%;
     height: 70%;
     bottom: 0;
-    background-color: #500d78;
+    background-color: ${colors.primary.regular};
   }
 
   .liquid:after {
-    background-color: #3a0956;
+    background-color: ${colors.primary.dark};
   }
 
   .liquid .bottle-bubble {
@@ -77,13 +77,13 @@ export const Bottle = styled(StyledComponent)`
     left: 30px;
     width: 8px;
     height: 8px;
-    background-color: #3a0956;
+    background-color: ${colors.primary.dark};
   }
 
   .bottle-reflection {
     opacity: 0.5;
     border-radius: 0 0 0 50px;
-    border: 6px solid #feffff;
+    border: 6px solid ${colors.grey.white};
     border-top: 0;
     border-right: 0;
     width: 18px;
@@ -96,15 +96,19 @@ export const Bottle = styled(StyledComponent)`
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: #feffff;
+      background-color: ${colors.grey.white};
       bottom: 10px;
       left: -6px;
-      box-shadow: 15px 16px #feffff;
+      box-shadow: 15px 16px ${colors.grey.white};
     }
   }
 `;
 
-export const StyledBottleLeft = styled(Bottle)`
+export const Bottle = styled(StyledComponent)`
+  ${DynamicBottleStyle}
+`;
+
+const DynamicBottleLeftStyle = ({ theme: { colors } }) => css`
   bottom: 20px;
   left: 35%;
   width: 50px;
@@ -129,7 +133,7 @@ export const StyledBottleLeft = styled(Bottle)`
     }
 
     &::before {
-      background-color: #feffff;
+      background-color: ${colors.grey.white};
       height: 80%;
       width: 30%;
       left: 12%;
@@ -154,7 +158,11 @@ export const StyledBottleLeft = styled(Bottle)`
   }
 `;
 
-export const StyledBottleRight = styled(Bottle)`
+export const StyledBottleLeft = styled(Bottle)`
+  ${DynamicBottleLeftStyle}
+`;
+
+const DynamicBottleRightStyle = ({ theme: { colors } }) => css`
   transform-origin: bottom right;
   bottom: 70px;
   left: 73%;
@@ -184,7 +192,7 @@ export const StyledBottleRight = styled(Bottle)`
       width: 20px;
       height: 8px;
       border-radius: 10px;
-      background-color: #feffff;
+      background-color: ${colors.grey.white};
       opacity: 0.4;
       left: 5px;
       top: 6px;
@@ -230,6 +238,10 @@ export const StyledBottleRight = styled(Bottle)`
       border-radius: 0 5px 5px 0;
     }
   }
+`;
+
+export const StyledBottleRight = styled(Bottle)`
+  ${DynamicBottleRightStyle}
 `;
 
 const drip = keyframes`

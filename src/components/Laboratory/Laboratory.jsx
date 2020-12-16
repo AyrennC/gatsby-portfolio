@@ -6,6 +6,8 @@ import Light from './LightSource';
 import Pumpkins from './Pumpkins';
 import Shelves from './Shelves';
 import StyledComponent from './StyledComponent';
+import theme from './Theme';
+import { ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
 
@@ -29,16 +31,18 @@ const Room = styled(StyledComponent)`
 `;
 
 const Laboratory = () => (
-  <LaboratoryContainer>
-    <Room>
-      <Shelves />
-      <Light />
-      <Cauldron />
-      <HungWindow />
-      <Pumpkins />
-      <Broom />
-    </Room>
-  </LaboratoryContainer>
+  <ThemeProvider theme={theme}>
+    <LaboratoryContainer>
+      <Room>
+        <Shelves />
+        <Light />
+        <Cauldron />
+        <HungWindow />
+        <Pumpkins />
+        <Broom />
+      </Room>
+    </LaboratoryContainer>
+  </ThemeProvider>
 );
 
 export default Laboratory;

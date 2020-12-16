@@ -5,7 +5,7 @@ const Notepad = styled.div`
   width: 136px;
   background: linear-gradient(
     to bottom,
-    #f17777 0px,
+    #f17777 0,
     #f17777 34px,
     #fff 34px,
     #fff 62px,
