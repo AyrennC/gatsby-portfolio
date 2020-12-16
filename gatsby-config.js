@@ -21,7 +21,8 @@ module.exports = {
   },
   /* Plugins */
   plugins: [
-    `gatsby-plugin-graphql-config`,
+    'gatsby-plugin-ramda',
+    'gatsby-plugin-graphql-config',
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',

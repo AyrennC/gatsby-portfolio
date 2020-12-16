@@ -1,7 +1,8 @@
 /** @jsx jsx */
-import StyledComponent from './StyledComponent';
+import StyledComponent from '../StyledComponent';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
+import * as R from 'ramda';
 import { jsx } from 'theme-ui';
 
 export const Book = styled(StyledComponent)`
@@ -101,14 +102,14 @@ export const StyledBooks = styled(StyledComponent)`
   width: 120px;
 `;
 
-const repeat = (number) => (componentFactory) =>
-  new Array(number).fill(0).map((_, key) => componentFactory(key));
-
 const Books = ({ shadow, number, ...props }) => (
   <StyledBooks {...props}>
-    {repeat(number)((key) => (
-      <Book key={key}>{shadow || <div className="details" />}</Book>
-    ))}
+    {R.times(
+      (key) => (
+        <Book key={key}>{shadow || <div className="details" />}</Book>
+      ),
+      number,
+    )}
     <BookUp>{shadow || <div className="details" />}</BookUp>
   </StyledBooks>
 );

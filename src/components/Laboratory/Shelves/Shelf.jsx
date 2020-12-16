@@ -10,7 +10,7 @@ import { StyledCandle, StyledCandles } from './Candles';
 import { StyledCandyBowl } from './CandyBowl';
 import { StyledCrystalBall } from './CystalBall';
 import { StyledSkull } from './Skull';
-import StyledComponent from './StyledComponent';
+import StyledComponent from '../StyledComponent';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';

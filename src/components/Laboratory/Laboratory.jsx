@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import Cauldron from './Cauldron';
 import Shelves from './Shelves';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
@@ -19,6 +20,7 @@ const LaboratoryContainer = styled.div`
 const Laboratory = () => (
   <LaboratoryContainer>
     <Shelves />
+    <Cauldron />
   </LaboratoryContainer>
 );
 

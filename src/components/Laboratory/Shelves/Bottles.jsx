@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import StyledComponent from './StyledComponent';
+import StyledComponent from '../StyledComponent';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
