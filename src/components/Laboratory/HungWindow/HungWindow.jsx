@@ -1,18 +1,11 @@
 /** @jsx jsx */
 import Cat from './Cat';
-import StyledComponent from '../StyledComponent';
-import styled from '@emotion/styled';
+import Moon from './Moon';
+import Stars from './Stars';
+import StyledComponent, { Container } from '../StyledComponent';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled/macro';
 import { jsx } from 'theme-ui';
-
-const WindowContainer = styled(StyledComponent)`
-  left: 50px;
-  top: 200px;
-  width: 200px;
-  height: 250px;
-  transform: scale(1.1);
-  transform-origin: bottom center;
-  z-index: 2;
-`;
 
 const Window = styled(StyledComponent)`
   width: 100%;
@@ -51,7 +44,7 @@ const Reflections = styled(StyledComponent)`
 
   &::before {
     background-color: #8f65a9;
-    right: 0px;
+    right: 0;
     width: 155px;
     height: 16px;
     z-index: 2;
@@ -60,14 +53,14 @@ const Reflections = styled(StyledComponent)`
   }
 
   &:nth-of-type(2) {
-    bottom: 0px;
+    bottom: 0;
     right: -10px;
     width: 10px;
     height: 90px;
     border-radius: 50px 0 0 0;
     &::before {
-      bottom: 0px;
-      right: 0px;
+      bottom: 0;
+      right: 0;
       width: 100%;
       height: 220px;
       z-index: 2;
@@ -78,7 +71,7 @@ const Reflections = styled(StyledComponent)`
   &:nth-of-type(3) {
     background-color: #8f65a9;
     bottom: 124px;
-    right: 0px;
+    right: 0;
     width: 130px;
     height: 14px;
     z-index: 10;
@@ -100,29 +93,55 @@ const WindowIn = styled(StyledComponent)`
   overflow: hidden;
 `;
 
-const HungWindow = (props) => (
-  <WindowContainer {...props}>
-    <Window>
-      <Reflections />
-      <Reflections />
-      <Reflections />
-      <WindowIn>
-        <div className="moon">
-          <div className="craters" />
-        </div>
-        <div className="stars">
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-        </div>
-      </WindowIn>
-    </Window>
+const ShadowStyle = css`
+  background-color: transparent !important;
+  transform: scale(1.1, 1.1) translate(-8px, -5px);
 
-    <Cat highlight />
-    <Cat />
-  </WindowContainer>
+  ${Window} {
+    background-color: #410b61 !important;
+    border-color: transparent !important;
+
+    &::before {
+      content: none !important;
+    }
+
+    &::after {
+      background-color: #410b61 !important;
+    }
+  }
+`;
+
+const WindowContainer = styled(StyledComponent)`
+  left: 50px;
+  top: 200px;
+  width: 200px;
+  height: 250px;
+  transform: scale(1.1);
+  transform-origin: bottom center;
+  z-index: 2;
+
+  ${({ shadow }) => shadow && ShadowStyle};
+`;
+
+const HungWindow = (props) => (
+  <Container {...props}>
+    <WindowContainer shadow>
+      <Window />
+    </WindowContainer>
+    <WindowContainer>
+      <Window>
+        <Reflections />
+        <Reflections />
+        <Reflections />
+        <WindowIn>
+          <Moon />
+          <Stars />
+        </WindowIn>
+      </Window>
+      <Cat highlight />
+      <Cat />
+    </WindowContainer>
+  </Container>
 );
 
 export default HungWindow;

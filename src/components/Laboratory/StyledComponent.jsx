@@ -22,4 +22,9 @@ const StyledComponent = styled.div`
   }
 `;
 
+export const Container = styled(StyledComponent)`
+  width: 100%;
+  height: 100%;
+`;
+
 export default StyledComponent;

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import Bubbles, { StyledBubbles } from './Bubbles';
-import StyledComponent from '../StyledComponent';
+import StyledComponent, { Container } from '../StyledComponent';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import { jsx } from 'theme-ui';
@@ -32,7 +32,7 @@ const StyledCauldron = styled(StyledComponent)`
   width: 180px;
   height: 180px;
   left: calc(50% - 90px);
-  bottom: -12px;
+  bottom: 14px;
   background-color: #500d78;
   border-radius: 50%;
   transform: scale(0.9);
@@ -105,7 +105,7 @@ const Handle = styled(StyledComponent)`
 `;
 
 const Cauldron = (props) => (
-  <div {...props}>
+  <Container {...props}>
     <StyledCauldron shadow>
       <Bubbles />
       <CauldronTop />
@@ -115,7 +115,7 @@ const Cauldron = (props) => (
       <Bubbles />
       <CauldronTop />
     </StyledCauldron>
-  </div>
+  </Container>
 );
 
 export default Cauldron;

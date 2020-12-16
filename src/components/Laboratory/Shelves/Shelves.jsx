@@ -6,10 +6,11 @@ import CandyBowl from './CandyBowl';
 import CrystalBall from './CystalBall';
 import Shelf, { ShelfBottom, ShelfMiddle, ShelfTop } from './Shelf';
 import Skull from './Skull';
+import { Container } from '../StyledComponent';
 import { jsx } from 'theme-ui';
 
 const Shelves = (props) => (
-  <div {...props}>
+  <Container {...props}>
     <ShelfTop>
       <Shelf shadow>
         <CrystalBall shadow />
@@ -46,7 +47,7 @@ const Shelves = (props) => (
         <CandyBowl />
       </Shelf>
     </ShelfBottom>
-  </div>
+  </Container>
 );
 
 export default Shelves;
