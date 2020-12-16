@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import Cauldron from './Cauldron';
+import HungWindow from './HungWindow';
 import Shelves from './Shelves';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
@@ -21,6 +22,7 @@ const Laboratory = () => (
   <LaboratoryContainer>
     <Shelves />
     <Cauldron />
+    <HungWindow />
   </LaboratoryContainer>
 );
 

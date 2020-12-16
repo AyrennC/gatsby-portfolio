@@ -58,7 +58,7 @@ const RainContainer = styled.div`
   overflow: hidden;
 `;
 
-const Window = (props) => (
+const PictureWindow = (props) => (
   <WindowContainer {...props}>
     <RainContainer>
       <Rain />
@@ -66,4 +66,4 @@ const Window = (props) => (
   </WindowContainer>
 );
 
-export default Window;
+export default PictureWindow;

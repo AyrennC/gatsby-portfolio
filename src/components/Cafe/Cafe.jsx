@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import Decorations from './Decorations';
+import PictureWindow from './PictureWindow';
 import Table from './Table';
 import Terminal from './Terminal';
-import WindowComponent from './Window';
 import WallTile from '../../images/wall-tile.png';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
@@ -17,7 +17,7 @@ const CafeContainer = styled.div`
   }
 `;
 
-const Window = styled(WindowComponent)`
+const Window = styled(PictureWindow)`
   @media (max-width: 1500px) and (min-aspect-ratio: 2 / 3) {
     width: 65%;
   }
