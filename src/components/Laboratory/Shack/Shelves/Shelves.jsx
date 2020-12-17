@@ -2,8 +2,6 @@
 import Books from './Books';
 import { BottleLeft, Drippings, BottleRight } from './Bottles';
 import Candles from './Candles';
-import CandyBowl from './CandyBowl';
-import CrystalBall from './CystalBall';
 import Shelf, { ShelfBottom, ShelfMiddle, ShelfTop } from './Shelf';
 import Skull from './Skull';
 import { Container } from '../../StyledComponent';
@@ -13,13 +11,11 @@ const Shelves = (props) => (
   <Container {...props}>
     <ShelfTop>
       <Shelf shadow>
-        <CrystalBall shadow />
         <BottleLeft shadow />
         <Drippings />
         <BottleRight shadow />
       </Shelf>
       <Shelf>
-        <CrystalBall />
         <BottleLeft />
         <Drippings />
         <BottleRight />
@@ -40,11 +36,9 @@ const Shelves = (props) => (
     <ShelfBottom>
       <Shelf shadow>
         <Books shadow />
-        <CandyBowl shadow />
       </Shelf>
       <Shelf>
         <Books />
-        <CandyBowl />
       </Shelf>
     </ShelfBottom>
   </Container>

@@ -16,6 +16,10 @@ const LaboratoryContainer = styled.div`
   background: url(${Sunset});
   background-size: cover;
 
+  @media (orientation: portrait) {
+    display: none;
+  }
+
   @media screen and (max-height: 530px) and (orientation: landscape) {
     min-height: 100vw;
   }

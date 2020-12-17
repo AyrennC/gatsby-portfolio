@@ -60,7 +60,7 @@ const Interior = styled(StyledComponent)`
   bottom: 0;
   margin: 0 5%;
 
-  @media (max-width: 1260px) {
+  @media (max-width: 1024px) {
     width: 100%;
     margin: 0;
   }

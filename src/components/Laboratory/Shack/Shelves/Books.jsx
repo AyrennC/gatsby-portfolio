@@ -106,7 +106,7 @@ export const BookUp = styled(StyledComponent)`
 
 export const StyledBooks = styled(StyledComponent)`
   bottom: 18px;
-  left: 10px;
+  right: 20px;
   height: 60px;
   width: 120px;
 `;

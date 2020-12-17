@@ -269,7 +269,10 @@ export default Shelf;
 
 Shelf.propTypes = {
   shadow: PropTypes.bool,
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
 };
 
 Shelf.defaultProps = {
