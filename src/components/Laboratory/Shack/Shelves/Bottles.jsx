@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import StyledComponent from '../StyledComponent';
+import StyledComponent from '../../StyledComponent';
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
@@ -205,10 +205,10 @@ const DynamicBottleRightStyle = ({ theme: { colors } }) => css`
       width: 38%;
       bottom: 0;
       left: 0;
-      background-color: #3ebcbc;
+      background-color: ${colors.palette.drippings};
       z-index: 2;
       &::after {
-        background-color: #3ebcbc;
+        background-color: ${colors.palette.drippings};
       }
     }
   }
@@ -250,10 +250,10 @@ const drip = keyframes`
   }
 `;
 
-export const StyledDrippings = styled(StyledComponent)`
+const DynamicDrippingsStyle = ({ theme: { colors } }) => css`
   width: 30px;
   height: 12px;
-  background-color: #3ebcbc;
+  background-color: ${colors.palette.drippings};
   left: 58%;
   border-radius: 3px;
   top: -1px;
@@ -263,7 +263,7 @@ export const StyledDrippings = styled(StyledComponent)`
     width: 8px;
     height: 18px;
     border-radius: 3px;
-    background-color: #3ebcbc;
+    background-color: ${colors.palette.drippings};
     top: 8px;
     right: 0;
   }
@@ -272,11 +272,15 @@ export const StyledDrippings = styled(StyledComponent)`
     width: 8px;
     height: 12px;
     border-radius: 3px;
-    background-color: #3ebcbc;
+    background-color: ${colors.palette.drippings};
     top: 10px;
     right: 0;
     animation: ${drip} 5s ease-in infinite;
   }
+`;
+
+export const StyledDrippings = styled(StyledComponent)`
+  ${DynamicDrippingsStyle}
 `;
 
 export const BottleLeft = ({ shadow, ...props }) => (

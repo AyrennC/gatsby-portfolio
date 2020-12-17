@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import StyledComponent from '../StyledComponent';
+import StyledComponent from '../../StyledComponent';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
@@ -195,8 +195,8 @@ const DynamicCandyBowlStyle = ({ theme: { colors } }) => css`
       -40deg,
       ${colors.grey.white},
       ${colors.grey.white} 3px,
-      #3ebcbc 3px,
-      #3ebcbc 6px
+      ${colors.palette.drippings} 3px,
+      ${colors.palette.drippings} 6px
     );
     left: 15px;
     top: 25px;

@@ -2,7 +2,7 @@
 import Cat from './Cat';
 import Moon from './Moon';
 import Stars from './Stars';
-import StyledComponent, { Container } from '../StyledComponent';
+import StyledComponent, { Container } from '../../StyledComponent';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import { jsx } from 'theme-ui';
@@ -99,6 +99,13 @@ const DynamicWindowInStyle = ({ theme: { colors } }) => css`
   border: 6px solid ${colors.primary.light};
   border-top: 0;
   overflow: hidden;
+  background: linear-gradient(
+    200deg,
+    #21244d 0 45%,
+    #323866 45% 70%,
+    #3e4173 70% 90%,
+    #604970 90%
+  );
 `;
 
 const WindowIn = styled(StyledComponent)`

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import StyledComponent from '../StyledComponent';
+import StyledComponent from '../../StyledComponent';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
@@ -56,7 +56,7 @@ const DynamicBookStyle = ({ theme: { colors } }) => css`
   }
 
   &:nth-of-type(3):after {
-    border-color: #3ebcbc;
+    border-color: ${colors.palette.drippings};
   }
 `;
 

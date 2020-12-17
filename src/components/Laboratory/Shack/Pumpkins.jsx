@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import StyledComponent, { Container } from './StyledComponent';
+import StyledComponent, { Container } from '../StyledComponent';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import { jsx } from 'theme-ui';

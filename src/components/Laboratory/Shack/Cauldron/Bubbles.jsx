@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import StyledComponent from '../StyledComponent';
-import { keyframes } from '@emotion/react';
+import StyledComponent from '../../StyledComponent';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import * as R from 'ramda';
 import { jsx } from 'theme-ui';
@@ -20,13 +20,13 @@ const bubbleGrow = keyframes`
   }
 `;
 
-export const StyledBubble = styled(StyledComponent)`
+export const DynamicBubbleStyle = ({ theme: { colors } }) => css`
   bottom: -10px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   left: 135px;
-  background-color: #ef59e7;
+  background-color: ${colors.bubble.medium};
   animation: ${bubble} 3s linear infinite;
 
   &::after {
@@ -35,7 +35,7 @@ export const StyledBubble = styled(StyledComponent)`
     right: 15%;
     top: 15%;
     border-radius: 50%;
-    background-color: rgba(254, 255, 255, 0.3);
+    background-color: ${colors.bubble.light};
   }
 
   &::before {
@@ -44,7 +44,7 @@ export const StyledBubble = styled(StyledComponent)`
     border-radius: 50%;
     left: 10px;
     background-color: transparent;
-    box-shadow: -10px 0 #ca44c3;
+    box-shadow: -10px 0 ${colors.bubble.dark};
   }
 
   &:nth-of-type(1) {
@@ -102,6 +102,10 @@ export const StyledBubble = styled(StyledComponent)`
     width: 40px;
     height: 40px;
   }
+`;
+
+export const StyledBubble = styled(StyledComponent)`
+  ${DynamicBubbleStyle}
 `;
 
 export const StyledBubbles = styled(StyledComponent)`

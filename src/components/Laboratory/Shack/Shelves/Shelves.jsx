@@ -6,7 +6,7 @@ import CandyBowl from './CandyBowl';
 import CrystalBall from './CystalBall';
 import Shelf, { ShelfBottom, ShelfMiddle, ShelfTop } from './Shelf';
 import Skull from './Skull';
-import { Container } from '../StyledComponent';
+import { Container } from '../../StyledComponent';
 import { jsx } from 'theme-ui';
 
 const Shelves = (props) => (

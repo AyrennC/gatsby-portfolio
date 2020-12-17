@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import StyledComponent from '../StyledComponent';
+import StyledComponent from '../../StyledComponent';
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
@@ -38,14 +38,14 @@ const DynamicSkullStyle = ({ theme: { colors } }) => css`
       left: -2px;
       top: -5px;
       border-radius: 10px;
-      background-color: #3ebcbc;
+      background-color: ${colors.palette.drippings};
       transform: skewX(-10deg);
 
       &::before {
         width: 10px;
         height: 20px;
         border-radius: 5px;
-        background-color: #3ebcbc;
+        background-color: ${colors.palette.drippings};
         top: 12px;
         left: 6px;
       }

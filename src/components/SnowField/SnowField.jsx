@@ -80,8 +80,8 @@ const HomeLink = styled(Link)`
 `;
 
 const DynamicGroundStyle = ({ treeSize, theme: { colors } }) => {
-  const forrestLeft = trees(-1, treeSize, colors.text.secondary);
-  const forrestRight = trees(1, treeSize, colors.text.secondary);
+  const forestLeft = trees(-1, treeSize, colors.text.secondary);
+  const forestRight = trees(1, treeSize, colors.text.secondary);
 
   return css`
     height: 160px;
@@ -112,14 +112,14 @@ const DynamicGroundStyle = ({ treeSize, theme: { colors } }) => {
       left: 50%;
       margin-left: -${treeSize / 1.5}px;
 
-      ${forrestLeft};
+      ${forestLeft};
     }
 
     &::before {
       right: 50%;
       margin-right: -${treeSize / 1.5}px;
 
-      ${forrestRight};
+      ${forestRight};
     }
   `;
 };

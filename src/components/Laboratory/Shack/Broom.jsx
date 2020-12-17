@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import StyledComponent, { Container } from './StyledComponent';
+import StyledComponent, { Container } from '../StyledComponent';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import PropTypes from 'prop-types';
@@ -200,38 +200,42 @@ const BroomDetails = styled(StyledComponent)`
   ${DynamicBroomDetailsStyle}
 `;
 
-const DynamicShadowStyle = ({ theme: { colors } }) => css`
-  background-color: transparent !important;
-  transform: scale(1.1, 1.1) translatey(-15px);
-
-  *,
-  *:after,
-  *:before,
-  * > * {
-    background-color: ${colors.shadow.dark} !important;
-    box-shadow: none !important;
-  }
-
-  ${BroomStick},
-  ${BroomStick}::after,
-  ${BroomStick}::before {
-    background: ${colors.shadow.dark} !important;
-  }
-
-  ${BroomHair},
-  ${BroomHairBottom} {
+const DynamicShadowStyle = ({ shadow, theme: { colors } }) =>
+  shadow &&
+  css`
     background-color: transparent !important;
-  }
-`;
+    transform: scale(1.1, 1.1) translate(-5px, 10px) rotate(-110deg);
+    z-index: 1;
+
+    *,
+    *:after,
+    *:before,
+    * > * {
+      background-color: ${colors.shadow.dark} !important;
+      box-shadow: none !important;
+    }
+
+    ${BroomStick},
+    ${BroomStick}::after,
+  ${BroomStick}::before {
+      background: ${colors.shadow.dark} !important;
+    }
+
+    ${BroomHair},
+    ${BroomHairBottom} {
+      background-color: transparent !important;
+    }
+  `;
 
 const BroomContainer = styled(StyledComponent)`
   width: 400px;
   height: 80px;
-  left: calc(50% - 200px);
-  top: 40px;
+  left: -120px;
+  bottom: 170px;
   z-index: 2;
+  transform: rotate(-110deg);
 
-  ${({ shadow }) => shadow && DynamicShadowStyle};
+  ${DynamicShadowStyle};
 `;
 
 const StyledBroom = ({ shadow, ...props }) => (
