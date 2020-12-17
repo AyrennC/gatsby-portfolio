@@ -51,26 +51,28 @@ const tail = keyframes`
   }
 `;
 
-const HighlightStyle = ({ theme: { colors } }) => css`
-  transform: translate(-1px, -2px) scale(0.92);
-  transform-origin: bottom center;
+const HighlightStyle = ({ highlight, theme: { colors } }) =>
+  highlight &&
+  css`
+    transform: translate(-1px, -2px) scale(0.92);
+    transform-origin: bottom center;
 
-  * {
-    background-color: ${colors.primary.light} !important;
-  }
-
-  .neck {
-    background-color: ${colors.primary.light} !important;
-  }
-
-  .ear {
-    background-color: transparent !important;
-
-    .ear-in {
+    * {
       background-color: ${colors.primary.light} !important;
     }
-  }
-`;
+
+    .neck {
+      background-color: ${colors.primary.light} !important;
+    }
+
+    .ear {
+      background-color: transparent !important;
+
+      .ear-in {
+        background-color: ${colors.primary.light} !important;
+      }
+    }
+  `;
 
 const StyledCat = styled(StyledComponent)`
   width: 100px;
@@ -81,8 +83,32 @@ const StyledCat = styled(StyledComponent)`
   transform: scale(0.9);
   transform-origin: bottom center;
 
-  ${({ highlight }) => highlight && HighlightStyle};
+  ${HighlightStyle};
 `;
+
+const DynamicShadowStyle = ({ shadow, theme: { colors } }) =>
+  shadow &&
+  css`
+    transform: scale(1.15, 1.1) translate(-8px, 0);
+    background-color: ${colors.shadow.medium};
+    z-index: -1;
+
+    .tail {
+      background-color: ${colors.shadow.medium};
+    }
+  `;
+
+const DynamicHighlightStyle = ({ highlight }) =>
+  highlight &&
+  css`
+    transform: translate(1px, 1px);
+    background-color: #a786bb;
+    z-index: 0;
+
+    .tail {
+      background-color: #a786bb;
+    }
+  `;
 
 const DynamicCatTailStyle = ({ theme: { colors } }) => css`
   background-color: ${colors.primary.shadow};
@@ -111,34 +137,12 @@ const DynamicCatTailStyle = ({ theme: { colors } }) => css`
       border-radius: 20px;
     }
   }
-
-  ${({ shadow }) =>
-    shadow &&
-    css`
-      transform: scale(1.15, 1.1) translate(-8px, 0);
-      background-color: ${colors.shadow.medium};
-      z-index: -1;
-
-      .tail {
-        background-color: ${colors.shadow.medium};
-      }
-    `}
-
-  ${({ highlight }) =>
-    highlight &&
-    css`
-      transform: translate(1px, 1px);
-      background-color: #a786bb;
-      z-index: 0;
-
-      .tail {
-        background-color: #a786bb;
-      }
-    `}
 `;
 
 const StyledCatTail = styled(StyledComponent)`
   ${DynamicCatTailStyle}
+  ${DynamicShadowStyle};
+  ${DynamicHighlightStyle};
 `;
 
 const DynamicCatBodyStyle = ({ theme: { colors } }) => css`

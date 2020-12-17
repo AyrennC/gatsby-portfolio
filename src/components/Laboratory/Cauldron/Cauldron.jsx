@@ -49,12 +49,11 @@ const DynamicCauldronStyle = ({ theme: { colors } }) => css`
     left: 0;
     box-shadow: 0 25px ${colors.primary.extraDark};
   }
-
-  ${DynamicShadowStyle};
 `;
 
 const StyledCauldron = styled(StyledComponent)`
   ${DynamicCauldronStyle}
+  ${DynamicShadowStyle};
 `;
 
 const DynamicCauldronTopStyle = ({ theme: { colors } }) => css`
