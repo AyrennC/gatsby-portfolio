@@ -31,6 +31,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@theme-ui/components": "^0.3.4",
+    "fontsource-dosis": "^3.1.6",
     "fontsource-vt323": "^3.0.9",
     "gatsby": "^2.26.1",
     "gatsby-plugin-google-analytics": "^2.7.0",

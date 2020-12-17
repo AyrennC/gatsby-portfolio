@@ -21,8 +21,6 @@ export default {
   styles: {
     root: {
       fontFamily: 'body',
-      lineHeight: 'body',
-      fontWeight: 'body',
     },
   },
 };
