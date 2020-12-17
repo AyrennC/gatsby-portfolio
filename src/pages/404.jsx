@@ -6,7 +6,7 @@ import { jsx } from 'theme-ui';
 const NotFoundPage = () => (
   <Layout>
     <main>
-      <SnowField sx={{ minWidth: '100vw', minHeight: '100vh' }} />
+      <SnowField sx={{ minWidth: '100vw' }} />
     </main>
   </Layout>
 );

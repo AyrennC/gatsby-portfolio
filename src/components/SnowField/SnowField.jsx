@@ -27,6 +27,7 @@ const trees = (direction, size, color) => {
 
 const DynamicFieldStyle = ({ theme: { colors, fonts } }) => css`
   height: 100%;
+  min-height: 100vh;
   position: relative;
   color: ${colors.text.secondary};
   font-family: ${fonts.body};
