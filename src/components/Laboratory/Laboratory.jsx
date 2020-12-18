@@ -2,6 +2,7 @@
 import Shack from './Shack/Shack';
 import theme from './Theme';
 import Sunset from '../../images/sunset.png';
+import Tome from '../Tome';
 import { ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
@@ -11,7 +12,8 @@ const LaboratoryContainer = styled.div`
   min-height: 100vh;
   border-top: 32px #302521 solid;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   background: url(${Sunset});
   background-size: cover;
@@ -28,6 +30,7 @@ const LaboratoryContainer = styled.div`
 const Laboratory = () => (
   <ThemeProvider theme={theme}>
     <LaboratoryContainer>
+      <Tome sx={{ margin: '10%' }} />
       <Shack />
     </LaboratoryContainer>
   </ThemeProvider>

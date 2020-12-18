@@ -26,6 +26,8 @@ const DynamicShackStyle = ({ theme: { colors } }) => css`
   border: 4px #ffffff solid;
   border-bottom: none;
   bottom: 0;
+  position: relative;
+  display: block;
 
   @media (max-width: 1024px) {
     width: 828px;
