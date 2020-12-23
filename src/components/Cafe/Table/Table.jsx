@@ -6,7 +6,7 @@ import OutletComponent from './Outlet';
 import PencilHolderComponent from './PencilHolder';
 import Plant from './Plant';
 import Tray from './Tray';
-import Resume from '../../../data/carney-resume.pdf';
+import { Resume } from '../../../data';
 import TableTile from '../../../images/table-tile.png';
 import Monitor from '../Monitor';
 import styled from '@emotion/styled';

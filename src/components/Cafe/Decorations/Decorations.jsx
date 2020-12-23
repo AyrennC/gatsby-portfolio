@@ -2,7 +2,7 @@
 import NeonSign from './NeonSign';
 import Portrait from './Portrait';
 import PostersComponent from './Posters';
-import Resume from '../../../data/carney-resume.pdf';
+import { Resume } from '../../../data';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
 

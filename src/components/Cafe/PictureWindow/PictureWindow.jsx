@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import Rain from './Rain';
 import Cityscape from '../../../images/cityscape.png';
 import styled from '@emotion/styled';
 import { jsx } from 'theme-ui';
@@ -60,9 +59,7 @@ const RainContainer = styled.div`
 
 const PictureWindow = (props) => (
   <WindowContainer {...props}>
-    <RainContainer>
-      <Rain />
-    </RainContainer>
+    <RainContainer />
   </WindowContainer>
 );
 

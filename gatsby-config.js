@@ -21,6 +21,7 @@ module.exports = {
   },
   /* Plugins */
   plugins: [
+    'gatsby-plugin-remove-fingerprints',
     'gatsby-plugin-ramda',
     'gatsby-plugin-graphql-config',
     'gatsby-plugin-theme-ui',
@@ -64,14 +65,6 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
       __key: 'pages',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'data',
-        path: `${__dirname}/src/data/`,
-        ignore: ['**/.*'], // ignore files starting with a dot
-      },
     },
     // Must be placed at the end
     'gatsby-plugin-offline',
