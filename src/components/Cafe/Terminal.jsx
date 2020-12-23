@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import Glitch from './Glitch';
-import Resume from '../../data/carney-resume.pdf';
+import { Resume } from '../../data';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import Typist from 'react-typist';
